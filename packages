@@ -1,6 +1,9 @@
 #!/bin/env python3
-
 import sys
+import shutil
+import subprocess
+import operator
+
 import gi
 gi.require_version('PackageKitGlib', '1.0')
 from gi.repository import PackageKitGlib as packagekit
@@ -29,6 +32,8 @@ neededFiles = [
     "KF5DeclarativeConfig.cmake",
     "KF5KirigamiConfig.cmake",
 
+    "plasmaengineexplorer",
+    "plasmawindowed",
     "cuttlefish",
     "kate",
     "kdevelop"
@@ -38,21 +43,41 @@ def progressCallback(progress, type, user_data):
     pass
     #print('  ', type.value_name, 'package:', progress.props.package_id, ':', progress.props.percentage, '%')
 
-def main(args):
+def searchFiles(v):
+    #PackageKit
+    result = client.search_files(0, [v], None, progressCallback, None)
+    output = [p.get_name() for p in result.get_package_array()]
+    if output:
+        return output
+
+    #ArchLinux
+    if shutil.which("pkgfile"):
+        output = subprocess.check_output(["pkgfile", v]).decode("utf-8").strip().split('\n')
+    #Debian
+    elif shutil.which("apt-file"):
+        output = subprocess.check_output(["apt-file", "search", v]).decode("utf-8").strip().split('\n')
+
+    return output
+
+def main():
     packages = {}
     packagesNotFound = []
     for v in neededFiles:
-        result = client.search_files(0, [v], None, progressCallback, None)
-        pkgs = result.get_package_array()
+        pkgs = searchFiles(v)
+
         if not pkgs:
             packagesNotFound.append(v)
         else:
             for p in pkgs:
-                packages[p.get_name()] = 1
+                packages[p] = v
     print("Could not find packages for", packagesNotFound)
-    print("We suggest the following packages:", list(packages.keys()))
+    print()
+    print("We suggest the following packages:")
+    for pkg in packages:
+        print("* ", pkg, "<-", packages[pkg])
 
     # TODO: Add option to install them
+    return 0
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv))
+    sys.exit(main())
