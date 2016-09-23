@@ -43,6 +43,10 @@ def progressCallback(progress, type, user_data):
     pass
     #print('  ', type.value_name, 'package:', progress.props.package_id, ':', progress.props.percentage, '%')
 
+
+class Global:
+    debArchitecture = None
+
 def searchFiles(v):
     #PackageKit
     result = client.search_files(0, [v], None, progressCallback, None)
@@ -52,10 +56,12 @@ def searchFiles(v):
 
     #ArchLinux
     if shutil.which("pkgfile"):
-        output = subprocess.check_output(["pkgfile", v]).decode("utf-8").strip().split('\n')
+        output = subprocess.check_output(["pkgfile", v]).decode("utf-8").strip().split()
     #Debian
     elif shutil.which("apt-file"):
-        output = subprocess.check_output(["apt-file", "search", v]).decode("utf-8").strip().split('\n')
+        if not Global.debArchitecture:
+            Global.debArchitecture = subprocess.check_output(["dpkg", "--print-architecture"]).decode("utf-8").strip()
+        output = subprocess.check_output(["apt-file", "search", "--package-only", "-x", "/"+v+"$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
 
     return output
 
