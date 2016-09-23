@@ -1,0 +1,58 @@
+#!/bin/env python3
+
+import sys
+import gi
+gi.require_version('PackageKitGlib', '1.0')
+from gi.repository import PackageKitGlib as packagekit
+
+client = packagekit.Client()
+
+neededFiles = [
+    "gcc",
+    "g++",
+    "cmake",
+    "cmake-gui",
+    "git",
+    "gdb",
+    "clang",
+    "make",
+    "ninja",
+    #"clazy",
+
+    "qregularexpression.h", #QtCore, we are interested in Qt5
+    "qquickwindow.h", #QtDeclarative
+    "qtwebengineglobal.h", #QtWebEngine
+
+    "ECMConfig.cmake",
+    "KF5XmlGuiConfig.cmake",
+    "KF5SolidConfig.cmake",
+    "KF5DeclarativeConfig.cmake",
+    "KF5KirigamiConfig.cmake",
+
+    "cuttlefish",
+    "kate",
+    "kdevelop"
+]
+
+def progressCallback(progress, type, user_data):
+    pass
+    #print('  ', type.value_name, 'package:', progress.props.package_id, ':', progress.props.percentage, '%')
+
+def main(args):
+    packages = {}
+    packagesNotFound = []
+    for v in neededFiles:
+        result = client.search_files(0, [v], None, progressCallback, None)
+        pkgs = result.get_package_array()
+        if not pkgs:
+            packagesNotFound.append(v)
+        else:
+            for p in pkgs:
+                packages[p.get_name()] = 1
+    print("Could not find packages for", packagesNotFound)
+    print("We suggest the following packages:", list(packages.keys()))
+
+    # TODO: Add option to install them
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

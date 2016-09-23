@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<component type="addon">
+  <id>org.kde.development</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>KDE Development</name>
+  <summary>This component will install </summary>
+  <description>
+    <p>
+      KAppTemplate is an application to start development quickly using existing templates providing basic
+      repeatedly written code and a proper structure.
+    </p>
+  </description>
+  <url type="help">https://techbase.kde.org/Development/Tutorials</url>
+  <screenshots>
+    <screenshot type="homepage"><image>http://kde.org/images/screenshots/kapptemplate.png</image></screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+</component>
