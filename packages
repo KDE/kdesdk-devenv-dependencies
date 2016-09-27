@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 import sys
 import shutil
 import subprocess
@@ -11,15 +11,15 @@ from gi.repository import PackageKitGlib as packagekit
 client = packagekit.Client()
 
 neededFiles = [
-    "gcc",
-    "g++",
-    "cmake",
-    "cmake-gui",
-    "git",
-    "gdb",
-    "clang",
-    "make",
-    "ninja",
+    #"gcc",
+    #"g++",
+    "bin/cmake",
+    "bin/cmake-gui",
+    "bin/git",
+    "bin/gdb",
+    #"clang",
+    #"make",
+    #"ninja",
     #"clazy",
 
     "qregularexpression.h", #QtCore, we are interested in Qt5
@@ -49,10 +49,10 @@ class Global:
 
 def searchFiles(v):
     #PackageKit
-    result = client.search_files(0, [v], None, progressCallback, None)
-    output = [p.get_name() for p in result.get_package_array()]
-    if output:
-        return output
+    #result = client.search_files(0, [v], None, progressCallback, None)
+    #output = [p.get_name() for p in result.get_package_array()]
+    #if output:
+        #return output
 
     #ArchLinux
     if shutil.which("pkgfile"):
