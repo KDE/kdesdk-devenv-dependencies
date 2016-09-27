@@ -85,6 +85,7 @@ class Global:
             if not Global.debArchitecture:
                 Global.debArchitecture = subprocess.check_output(["dpkg", "--print-architecture"]).decode("utf-8").strip()
             prefix = "/usr/bin/" if isExecutable else "/"
+            fileName = fileName.replace("+", "\+") # prepare for regex
             packages = subprocess.check_output(["apt-file", "search", "--package-only", "-x", prefix + fileName + "$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
         #PackageKit
         elif shutil.which("pkcon"):
