@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
+
+import argparse
 import sys
 import shutil
 import subprocess
 import operator
+from functools import reduce
 import concurrent.futures
 
 import gi
@@ -52,6 +55,12 @@ class Global:
     packages = {}
     packagesNotFound = []
 
+    def __init__(self):
+        values  = [ (v, False) for v in neededFiles]
+        values += [ (v, True)  for v in neededBinaries]
+
+        self.process(values)
+
     def addResults(self, v, pkgs):
         if not pkgs:
             self.packagesNotFound.append(v)
@@ -59,7 +68,7 @@ class Global:
             for p in pkgs:
                 self.packages[p] = v
 
-    def printNow(self):
+    def printVerbose(self):
         if self.packagesNotFound:
             print("Could not find packages for", self.packagesNotFound)
             print()
@@ -67,6 +76,12 @@ class Global:
         print("We suggest the following packages:")
         for pkg in self.packages:
             print("* ", pkg, "<-", self.packages[pkg])
+
+    def printPackages(self):
+        print(" ".join(self.packages.keys()))
+
+    def installPackages(self):
+        subprocess.call(["pkcon", "install"] + list(self.packages.keys()))
 
     def searchFiles(arg):
         (fileName, isExecutable) = arg
@@ -78,8 +93,9 @@ class Global:
             if isExecutable:
                 cmd.insert(1, "-b")
             output = subprocess.check_output(cmd)
-            idx = output.index(b'\n')
-            packages = [ output[:idx].decode("utf-8") ] # only use the first alternative, pkgfile will sort them by repository precedence
+            start = output.index(b'/')+1 #extra/gcc -> gcc
+            end = output.index(b'\n')
+            packages = [ output[start:end].decode("utf-8") ] # only use the first alternative, pkgfile will sort them by repository precedence
         #Debian
         elif shutil.which("apt-file"):
             if not Global.debArchitecture:
@@ -103,13 +119,31 @@ class Global:
                 self.addResults(v, packages)
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("command", help="[install|packages|list]")
+    parser.add_argument("--verbose", help="increase output verbosity")
+    args = parser.parse_args()
+
     g = Global()
-    values  = [ (v, False) for v in neededFiles]
-    values += [ (v, True)  for v in neededBinaries]
 
-    g.process(values)
+    if args.verbose:
+        g.printVerbose()
 
-    g.printNow()
+    if args.command == "install":
+        g.installPackages()
+    elif args.command == "packages":
+        g.printPackages()
+    else:
+        correctCommand = args.command=="list"
+        if not correctCommand:
+            print("Wrong command '%s'" % args.command)
+            print()
+
+        print(" install:  triggers an install of the needed packages.")
+        print(" packages: lists the suggested packages, for distributors mostly.")
+        print(" list:     this list")
+        return 0 if correctCommand else 1
+
     return 0
 
 if __name__ == "__main__":
