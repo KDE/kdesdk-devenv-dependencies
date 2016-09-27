@@ -11,26 +11,27 @@ from gi.repository import PackageKitGlib as packagekit
 client = packagekit.Client()
 
 neededFiles = [
-    #"gcc",
-    #"g++",
-    "bin/cmake",
-    "bin/cmake-gui",
-    "bin/git",
-    "bin/gdb",
-    #"clang",
-    #"make",
-    #"ninja",
-    #"clazy",
-
-    "qregularexpression.h", #QtCore, we are interested in Qt5
-    "qquickwindow.h", #QtDeclarative
-    "qtwebengineglobal.h", #QtWebEngine
+    "Qt5CoreConfig.cmake",
+    "Qt5QuickConfig.cmake",
+    "Qt5WebEngineConfig.cmake",
 
     "ECMConfig.cmake",
     "KF5XmlGuiConfig.cmake",
     "KF5SolidConfig.cmake",
     "KF5DeclarativeConfig.cmake",
-    "KF5KirigamiConfig.cmake",
+    "KF5KirigamiConfig.cmake" ]
+
+neededBinaries =  [
+    "gcc",
+    "g++",
+    "cmake",
+    "cmake-gui",
+    "git",
+    "gdb",
+    "clang",
+    "make",
+    "ninja",
+    #"clazy",
 
     "plasmaengineexplorer",
     "plasmawindowed",
@@ -47,42 +48,57 @@ def progressCallback(progress, type, user_data):
 class Global:
     debArchitecture = None
 
-def searchFiles(v):
-    #PackageKit
-    #result = client.search_files(0, [v], None, progressCallback, None)
-    #output = [p.get_name() for p in result.get_package_array()]
-    #if output:
-        #return output
+    packages = {}
+    packagesNotFound = []
+
+    def addResults(self, v, pkgs):
+        if not pkgs:
+            self.packagesNotFound.append(v)
+        else:
+            for p in pkgs:
+                self.packages[p] = v
+
+    def printNow(self):
+        print("Could not find packages for", self.packagesNotFound)
+        print()
+        print("We suggest the following packages:")
+        for pkg in self.packages:
+            print("* ", pkg, "<-", self.packages[pkg])
+
+def searchFiles(v, isExecutable):
+    output = None
 
     #ArchLinux
     if shutil.which("pkgfile"):
-        output = subprocess.check_output(["pkgfile", v]).decode("utf-8").strip().split()
+        cmd = ["pkgfile", v]
+        if isExecutable:
+            cmd.insert(1, "-b")
+        output = subprocess.check_output(cmd).decode("utf-8").strip().split()
     #Debian
     elif shutil.which("apt-file"):
         if not Global.debArchitecture:
             Global.debArchitecture = subprocess.check_output(["dpkg", "--print-architecture"]).decode("utf-8").strip()
-        output = subprocess.check_output(["apt-file", "search", "--package-only", "-x", "/"+v+"$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
+        prefix = "/usr/bin/" if isExecutable else "/"
+        output = subprocess.check_output(["apt-file", "search", "--package-only", "-x", prefix + v + "$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
+    elif shutil.which("pkcon"):
+        result = client.search_files(0, [v], None, progressCallback, None)
+        output = [p.get_name() for p in result.get_package_array()]
 
+    #print("lolol", output, v)gy
     return output
 
 def main():
-    packages = {}
-    packagesNotFound = []
+    g = Global()
+
     for v in neededFiles:
-        pkgs = searchFiles(v)
+        pkgs = searchFiles(v, False)
+        g.addResults(v, pkgs)
 
-        if not pkgs:
-            packagesNotFound.append(v)
-        else:
-            for p in pkgs:
-                packages[p] = v
-    print("Could not find packages for", packagesNotFound)
-    print()
-    print("We suggest the following packages:")
-    for pkg in packages:
-        print("* ", pkg, "<-", packages[pkg])
+    for v in neededBinaries:
+        pkgs = searchFiles(v, True)
+        g.addResults(v, pkgs)
 
-    # TODO: Add option to install them
+    g.printNow()
     return 0
 
 if __name__ == "__main__":
