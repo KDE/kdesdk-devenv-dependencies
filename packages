@@ -60,40 +60,46 @@ class Global:
                 self.packages[p] = v
 
     def printNow(self):
-        print("Could not find packages for", self.packagesNotFound)
-        print()
+        if self.packagesNotFound:
+            print("Could not find packages for", self.packagesNotFound)
+            print()
+
         print("We suggest the following packages:")
         for pkg in self.packages:
             print("* ", pkg, "<-", self.packages[pkg])
 
     def searchFiles(arg):
-        (v, isExecutable) = arg
-        output = None
+        (fileName, isExecutable) = arg
+        packages = None
 
         #ArchLinux
         if shutil.which("pkgfile"):
-            cmd = ["pkgfile", v]
+            cmd = ["pkgfile", fileName]
             if isExecutable:
                 cmd.insert(1, "-b")
-            output = subprocess.check_output(cmd).decode("utf-8").strip().split()
+            output = subprocess.check_output(cmd)
+            idx = output.index(b'\n')
+            packages = [ output[:idx].decode("utf-8") ] # only use the first alternative, pkgfile will sort them by repository precedence
         #Debian
-        if shutil.which("apt-file"):
+        elif shutil.which("apt-file"):
             if not Global.debArchitecture:
                 Global.debArchitecture = subprocess.check_output(["dpkg", "--print-architecture"]).decode("utf-8").strip()
             prefix = "/usr/bin/" if isExecutable else "/"
-            output = subprocess.check_output(["apt-file", "search", "--package-only", "-x", prefix + v + "$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
+            packages = subprocess.check_output(["apt-file", "search", "--package-only", "-x", prefix + fileName + "$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
         #PackageKit
         elif shutil.which("pkcon"):
-            result = client.search_files(0, [v], None, progressCallback, None)
-            output = [p.get_name() for p in result.get_package_array()]
+            result = client.search_files(0, [fileName], None, progressCallback, None)
+            packages = [p.get_name() for p in result.get_package_array()]
 
-        return (v, output)
+        return (fileName, packages)
 
     def process(self, values):
         with concurrent.futures.ProcessPoolExecutor() as executor:
-            for v, output in executor.map(Global.searchFiles, values):
-            #for v, output in map(Global.searchFiles, values):
-                self.addResults(v, output)
+            for v, packages in map(Global.searchFiles, values):
+            #for v, packages in executor.map(Global.searchFiles, values):
+                if len(packages)>1:
+                    print("many packages for %s" % v, packages)
+                self.addResults(v, packages)
 
 def main():
     g = Global()
