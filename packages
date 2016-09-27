@@ -3,6 +3,7 @@ import sys
 import shutil
 import subprocess
 import operator
+import concurrent.futures
 
 import gi
 gi.require_version('PackageKitGlib', '1.0')
@@ -65,38 +66,41 @@ class Global:
         for pkg in self.packages:
             print("* ", pkg, "<-", self.packages[pkg])
 
-def searchFiles(v, isExecutable):
-    output = None
+    def searchFiles(arg):
+        (v, isExecutable) = arg
+        output = None
 
-    #ArchLinux
-    if shutil.which("pkgfile"):
-        cmd = ["pkgfile", v]
-        if isExecutable:
-            cmd.insert(1, "-b")
-        output = subprocess.check_output(cmd).decode("utf-8").strip().split()
-    #Debian
-    elif shutil.which("apt-file"):
-        if not Global.debArchitecture:
-            Global.debArchitecture = subprocess.check_output(["dpkg", "--print-architecture"]).decode("utf-8").strip()
-        prefix = "/usr/bin/" if isExecutable else "/"
-        output = subprocess.check_output(["apt-file", "search", "--package-only", "-x", prefix + v + "$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
-    elif shutil.which("pkcon"):
-        result = client.search_files(0, [v], None, progressCallback, None)
-        output = [p.get_name() for p in result.get_package_array()]
+        #ArchLinux
+        if shutil.which("pkgfile"):
+            cmd = ["pkgfile", v]
+            if isExecutable:
+                cmd.insert(1, "-b")
+            output = subprocess.check_output(cmd).decode("utf-8").strip().split()
+        #Debian
+        if shutil.which("apt-file"):
+            if not Global.debArchitecture:
+                Global.debArchitecture = subprocess.check_output(["dpkg", "--print-architecture"]).decode("utf-8").strip()
+            prefix = "/usr/bin/" if isExecutable else "/"
+            output = subprocess.check_output(["apt-file", "search", "--package-only", "-x", prefix + v + "$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
+        #PackageKit
+        elif shutil.which("pkcon"):
+            result = client.search_files(0, [v], None, progressCallback, None)
+            output = [p.get_name() for p in result.get_package_array()]
 
-    #print("lolol", output, v)gy
-    return output
+        return (v, output)
+
+    def process(self, values):
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            for v, output in executor.map(Global.searchFiles, values):
+            #for v, output in map(Global.searchFiles, values):
+                self.addResults(v, output)
 
 def main():
     g = Global()
+    values  = [ (v, False) for v in neededFiles]
+    values += [ (v, True)  for v in neededBinaries]
 
-    for v in neededFiles:
-        pkgs = searchFiles(v, False)
-        g.addResults(v, pkgs)
-
-    for v in neededBinaries:
-        pkgs = searchFiles(v, True)
-        g.addResults(v, pkgs)
+    g.process(values)
 
     g.printNow()
     return 0
