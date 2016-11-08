@@ -1,0 +1,15 @@
+pkgname=kde-development-environment
+pkgver=r4327.f537e89
+pkgrel=2
+pkgdesc='KDE Development Environment'
+arch=(any)
+url='https://phabricator.kde.org/T3722'
+license=(LGPL)
+depends=(@DEPENDS@)
+optdepends=(@OPTDEPENDS@)
+makedepends=()
+groups=(kde)
+
+pkgver() {
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
