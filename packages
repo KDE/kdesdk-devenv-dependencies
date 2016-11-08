@@ -5,8 +5,10 @@ import sys
 import shutil
 import subprocess
 import operator
+from enum import Enum
 from functools import reduce
 import concurrent.futures
+import json
 
 import gi
 gi.require_version('PackageKitGlib', '1.0')
@@ -36,7 +38,9 @@ neededBinaries =  [
     "make",
     "ninja",
     #"clazy",
+]
 
+suggestedBinaries = [
     "plasmaengineexplorer",
     "plasmawindowed",
     "cuttlefish",
@@ -49,6 +53,11 @@ def progressCallback(progress, type, user_data):
     #print('  ', type.value_name, 'package:', progress.props.package_id, ':', progress.props.percentage, '%')
 
 
+class RequirementType(Enum):
+    Needed = 0
+    Suggested = 1
+
+
 class Global:
     debArchitecture = None
 
@@ -56,17 +65,18 @@ class Global:
     packagesNotFound = []
 
     def __init__(self):
-        values  = [ (v, False) for v in neededFiles]
-        values += [ (v, True)  for v in neededBinaries]
+        values  = [ (v, RequirementType.Needed, False) for v in neededFiles]
+        values += [ (v, RequirementType.Needed, True)  for v in neededBinaries]
+        values += [ (v, RequirementType.Suggested, True)  for v in suggestedBinaries]
 
         self.process(values)
 
-    def addResults(self, v, pkgs):
+    def addResults(self, fileName, req, pkgs):
         if not pkgs:
             self.packagesNotFound.append(v)
         else:
             for p in pkgs:
-                self.packages[p] = v
+                self.packages[p] = (req, fileName)
 
     def printVerbose(self):
         if self.packagesNotFound:
@@ -74,8 +84,20 @@ class Global:
             print()
 
         print("We suggest the following packages:")
-        for pkg in self.packages:
-            print("* ", pkg, "<-", self.packages[pkg])
+        for pkg, props in self.packages:
+            print("* ", pkg, "<-", props)
+
+    def printPackagesJson(self):
+        ret = {
+            "required": [],
+            "suggested": []
+        }
+        for pkg, (required, filename) in self.packages.items():
+            if required == RequirementType.Needed:
+                ret["required"].append(pkg)
+            else:
+                ret["suggested"].append(pkg)
+        print(json.dumps(ret, sort_keys=True, indent=4, separators=(',', ': ')))
 
     def printPackages(self):
         print(" ".join(self.packages.keys()))
@@ -84,14 +106,12 @@ class Global:
         subprocess.call(["pkcon", "install"] + list(self.packages.keys()))
 
     def searchFiles(arg):
-        (fileName, isExecutable) = arg
+        (fileName, requirement, isExecutable) = arg
         packages = None
 
         #ArchLinux
-        if shutil.which("pkgfile"):
-            cmd = ["pkgfile", fileName]
-            if isExecutable:
-                cmd.insert(1, "-b")
+        if shutil.which("pacman"):
+            cmd = ["pacman", "-Fs", fileName]
             output = subprocess.check_output(cmd)
             start = output.index(b'/')+1 #extra/gcc -> gcc
             end = output.index(b'\n')
@@ -108,19 +128,19 @@ class Global:
             result = client.search_files(0, [fileName], None, progressCallback, None)
             packages = [p.get_name() for p in result.get_package_array()]
 
-        return (fileName, packages)
+        return (fileName, requirement, packages)
 
     def process(self, values):
         with concurrent.futures.ProcessPoolExecutor() as executor:
-            for v, packages in map(Global.searchFiles, values):
-            #for v, packages in executor.map(Global.searchFiles, values):
+            #for fileName, req, packages in map(Global.searchFiles, values):
+            for fileName, req, packages in executor.map(Global.searchFiles, values):
                 if len(packages)>1:
                     print("many packages for %s" % v, packages)
-                self.addResults(v, packages)
+                self.addResults(fileName, req, packages)
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", help="[install|packages|list]")
+    parser.add_argument("command", help="[install|packages|packages-json|list]")
     parser.add_argument("--verbose", action='store_true', help="increase output verbosity")
     args = parser.parse_args()
 
@@ -133,6 +153,8 @@ def main():
         g.installPackages()
     elif args.command == "packages":
         g.printPackages()
+    elif args.command == "packages-json":
+        g.printPackagesJson()
     else:
         correctCommand = args.command=="list"
         if not correctCommand:
