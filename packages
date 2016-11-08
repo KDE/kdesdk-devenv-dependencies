@@ -114,8 +114,8 @@ class Global:
             cmd = ["pacman", "-Fs", fileName]
             output = subprocess.check_output(cmd)
             start = output.index(b'/')+1 #extra/gcc -> gcc
-            end = output.index(b'\n')
-            packages = [ output[start:end].decode("utf-8") ] # only use the first alternative, pkgfile will sort them by repository precedence
+            end = output.index(b' ')
+            packages = [ output[start:end].decode("utf-8") ] # only use the first alternative, pacman will sort them by repository precedence
         #Debian
         elif shutil.which("apt-file"):
             if not Global.debArchitecture:
