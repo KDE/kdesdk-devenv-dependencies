@@ -161,9 +161,10 @@ def main():
             print("Wrong command '%s'" % args.command)
             print()
 
-        print(" install:  triggers an install of the needed packages.")
-        print(" packages: lists the suggested packages, for distributors mostly.")
-        print(" list:     this list")
+        print(" install:       triggers an install of the needed packages.")
+        print(" packages:      lists the suggested packages, for distributors mostly.")
+        print(" packages-json: lists the suggested packages, for distributors mostly.")
+        print(" list:          this list")
         return 0 if correctCommand else 1
 
     return 0
