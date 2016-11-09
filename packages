@@ -135,7 +135,7 @@ class Global:
             #for fileName, req, packages in map(Global.searchFiles, values):
             for fileName, req, packages in executor.map(Global.searchFiles, values):
                 if len(packages)>1:
-                    print("many packages for %s" % v, packages)
+                    print("many packages for %s" % fileName, packages)
                 self.addResults(fileName, req, packages)
 
 def main():
