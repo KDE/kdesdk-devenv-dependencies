@@ -73,7 +73,7 @@ class Global:
 
     def addResults(self, fileName, req, pkgs):
         if not pkgs:
-            self.packagesNotFound.append(v)
+            self.packagesNotFound.append(fileName)
         else:
             for p in pkgs:
                 self.packages[p] = (req, fileName)
