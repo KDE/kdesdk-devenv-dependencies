@@ -9,7 +9,19 @@ depends=(@DEPENDS@)
 optdepends=(@OPTDEPENDS@)
 makedepends=()
 groups=(kde)
+source=(org.kde.development.appdata.xml)
+md5sums=('@MD5@')
+noextract=()
+
+package() {
+    install "$srcdir/org.kde.development.appdata.xml" "$pkgdir/org.kde.development.appdata.xml"
+}
+
 
 pkgver() {
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+    install org.kde.development.appdata.xml "$pkgdir/org.kde.development.appdata.xml"
 }
