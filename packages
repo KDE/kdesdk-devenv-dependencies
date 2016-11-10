@@ -80,7 +80,7 @@ class Contents:
 
         def findAllPackages(self, file):
             payload = self.findFile(file)
-            packages = list(payload.values())
+            packages = payload.values()
             return [item for sublist in packages for item in sublist] #make sure it's just a list, not a list of lists
 
     poolsCache = None
