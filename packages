@@ -56,16 +56,43 @@ def progressCallback(progress, type, user_data):
     pass
     #print('  ', type.value_name, 'package:', progress.props.package_id, ':', progress.props.percentage, '%')
 
-
-def restQuery(url):
-    response = urllib.request.urlopen(url)
-    ret = json.loads(response.read().decode('utf-8'))
-    #print("fuuuu", url, ret)
-    return ret
-
 class RequirementType(Enum):
     Needed = 0
     Suggested = 1
+
+class Contents:
+    class Connection:
+        def __init__(self, urlBase = 'https://contents.neon.kde.org/v1'):
+            self.urlBase = urlBase
+
+        def getJSON(self, path):
+            response = urllib.request.urlopen("%s/%s" % (self.urlBase, path))
+            ret = json.loads(response.read().decode('utf-8'))
+            return ret
+
+    class Archive:
+        def __init__(self, id):
+            self.id = id
+            self.connection = Contents.Connection()
+
+        def findFile(self, file):
+            return self.connection.getJSON(('find/%s?q=*%s' % (self.id, file)))
+
+        def findPackageForFile(self, file):
+            payload = self.findFile(file)
+            assert len(payload.keys()) == 1
+            # Nested list since we don't resolve files, simply pick first.
+            packages = list(payload.values())[0]
+            assert len(packages) == 1
+            return packages[0]
+
+    poolsCache = None
+
+    @classmethod
+    def pools(klass, connection = Connection()):
+        if not klass.poolsCache:
+            klass.poolsCache = connection.getJSON('pools')
+        return klass.poolsCache
 
 class Global:
     repositories = None
@@ -127,15 +154,12 @@ class Global:
             packages = [ output[start:end].decode("utf-8") ] # only use the first alternative, pacman will sort them by repository precedence
         #Debian
         elif shutil.which("apt-get"):
-            if not Global.repositories:
-                Global.repositories = restQuery('https://contents.neon.kde.org/v1/pools')["neon"]
             prefix = "usr/bin/" if isExecutable else "/"
             packages = []
-            for repo in Global.repositories:
-                packages = [v[0] for v in restQuery('https://contents.neon.kde.org/v1/find/' + repo + '?q=*' + prefix + fileName).values()]
-                if packages:
-                    break
-            #print("pac", fileName, packages)
+            for repo in Contents.pools():
+                packages = [Contents.Archive(repo).findPackageForFile(prefix + fileName)]
+                if packages: break
+            # print("pac", fileName, package)
         #PackageKit
         elif shutil.which("pkcon"):
             result = client.search_files(0, [fileName], None, progressCallback, None)
