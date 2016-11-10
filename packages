@@ -9,16 +9,10 @@ from enum import Enum
 from functools import reduce
 import concurrent.futures
 import json
+import re
 
 # for apt
 import urllib.request
-
-# for pk
-import gi
-gi.require_version('PackageKitGlib', '1.0')
-from gi.repository import PackageKitGlib as packagekit
-
-client = packagekit.Client()
 
 neededFiles = [
     "Qt5CoreConfig.cmake",
@@ -26,10 +20,8 @@ neededFiles = [
     "Qt5WebEngineConfig.cmake",
 
     "ECMConfig.cmake",
-    "KF5XmlGuiConfig.cmake",
-    "KF5SolidConfig.cmake",
-    "KF5DeclarativeConfig.cmake",
-    "KF5KirigamiConfig.cmake" ]
+    "KF5*Config.cmake",
+]
 
 neededBinaries =  [
     "gcc",
@@ -86,6 +78,11 @@ class Contents:
             assert len(packages) == 1
             return packages[0]
 
+        def findAllPackages(self, file):
+            payload = self.findFile(file)
+            packages = list(payload.values())
+            return [item for sublist in packages for item in sublist] #make sure it's just a list, not a list of lists
+
     poolsCache = None
 
     @classmethod
@@ -133,6 +130,8 @@ class Global:
                 ret["required"].append(pkg)
             else:
                 ret["suggested"].append(pkg)
+        ret["required"].sort()
+        ret["suggested"].sort()
         print(json.dumps(ret, sort_keys=True, indent=4, separators=(',', ': ')))
 
     def printPackages(self):
@@ -141,8 +140,7 @@ class Global:
     def installPackages(self):
         subprocess.call(["pkcon", "install"] + list(self.packages.keys()))
 
-    def searchFiles(arg):
-        (fileName, requirement, isExecutable) = arg
+    def searchFile(fileName, requirement, isExecutable):
         packages = None
 
         #ArchLinux
@@ -160,19 +158,43 @@ class Global:
                 packages = [Contents.Archive(repo).findPackageForFile(prefix + fileName)]
                 if packages: break
             # print("pac", fileName, package)
-        #PackageKit
-        elif shutil.which("pkcon"):
-            result = client.search_files(0, [fileName], None, progressCallback, None)
-            packages = [p.get_name() for p in result.get_package_array()]
 
         return (fileName, requirement, packages)
 
+    archre = re.compile("[a-z]+/(.*) ")
+    def searchGlobFiles(fileName, requirement, isExecutable):
+        packages = None
+
+        #ArchLinux
+        if shutil.which("pacman"):
+            fileNamerx = fileName.replace("*", ".*")
+            cmd = ["pacman", "-Fsx", fileNamerx]
+            output = subprocess.check_output(cmd).decode("utf-8")
+            packages = Global.archre.findall(output)
+        #Debian
+        elif shutil.which("apt-get"):
+            prefix = "usr/bin/" if isExecutable else "/"
+            packages = []
+            for repo in Contents.pools():
+                packages = Contents.Archive(repo).findAllPackages(prefix + fileName)
+                if packages:
+                    break
+
+        return (fileName, requirement, packages)
+
+    def locate(arg):
+        (fileName, requirement, isExecutable) = arg
+        ret = None
+        if '*' in fileName:
+            ret = Global.searchGlobFiles(fileName, requirement, isExecutable)
+        else:
+            ret = Global.searchFile(fileName, requirement, isExecutable)
+        return ret
+
     def process(self, values):
         with concurrent.futures.ProcessPoolExecutor() as executor:
-            #for fileName, req, packages in map(Global.searchFiles, values):
-            for fileName, req, packages in executor.map(Global.searchFiles, values):
-                if len(packages)>1:
-                    print("many packages for %s" % fileName, packages)
+            #for fileName, req, packages in map(Global.locate, values):
+            for fileName, req, packages in executor.map(Global.locate, values):
                 self.addResults(fileName, req, packages)
 
 def main():
