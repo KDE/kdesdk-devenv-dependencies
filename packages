@@ -120,7 +120,7 @@ class Global:
             print()
 
         print("We suggest the following packages:")
-        for pkg, props in self.packages:
+        for pkg, props in self.packages.items():
             print("* ", pkg, "<-", props)
 
     def printPackagesJson(self):
