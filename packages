@@ -72,6 +72,8 @@ class Contents:
 
         def findPackageForFile(self, file):
             payload = self.findFile(file)
+            if not payload:
+                return None
             assert len(payload.keys()) == 1
             # Nested list since we don't resolve files, simply pick first.
             packages = list(payload.values())[0]
@@ -93,6 +95,7 @@ class Contents:
 
 class Global:
     repositories = None
+    backend = "debian"
 
     packages = {}
     packagesNotFound = []
@@ -144,19 +147,21 @@ class Global:
         packages = None
 
         #ArchLinux
-        if shutil.which("pacman"):
+        if Global.backend == "archlinux":
             cmd = ["pacman", "-Fs", fileName]
             output = subprocess.check_output(cmd)
             start = output.index(b'/')+1 #extra/gcc -> gcc
             end = output.index(b' ')
             packages = [ output[start:end].decode("utf-8") ] # only use the first alternative, pacman will sort them by repository precedence
         #Debian
-        elif shutil.which("apt-get"):
+        elif Global.backend == "debian":
             prefix = "usr/bin/" if isExecutable else "/"
             packages = []
             for repo in Contents.pools():
-                packages = [Contents.Archive(repo).findPackageForFile(prefix + fileName)]
-                if packages: break
+                pkg = Contents.Archive(repo).findPackageForFile(prefix + fileName)
+                if pkg:
+                    packages = [pkg]
+                    break
             # print("pac", fileName, package)
 
         return (fileName, requirement, packages)
@@ -166,13 +171,13 @@ class Global:
         packages = None
 
         #ArchLinux
-        if shutil.which("pacman"):
+        if Global.backend == "archlinux":
             fileNamerx = fileName.replace("*", ".*")
             cmd = ["pacman", "-Fsx", fileNamerx]
             output = subprocess.check_output(cmd).decode("utf-8")
             packages = Global.archre.findall(output)
         #Debian
-        elif shutil.which("apt-get"):
+        elif Global.backend == "debian":
             prefix = "usr/bin/" if isExecutable else "/"
             packages = []
             for repo in Contents.pools():
