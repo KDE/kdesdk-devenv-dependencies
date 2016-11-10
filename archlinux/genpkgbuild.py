@@ -13,7 +13,7 @@ def md5(fname):
     return hash_md5.hexdigest()
 
 def main():
-    jsoninfo = subprocess.check_output(["./packages", "packages-json"])
+    jsoninfo = subprocess.check_output(["./packages", "packages-json", "archlinux"])
     deps = json.loads(jsoninfo.decode('utf-8'))
 
     with open('archlinux/PKGBUILD.in') as infile, open('archlinux-output/PKGBUILD', 'w') as outfile:

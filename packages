@@ -205,6 +205,7 @@ class Global:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("command", help="[install|packages|packages-json|list]")
+    parser.add_argument("backend", choices=["debian", "archlinux"])
     parser.add_argument("--verbose", action='store_true', help="increase output verbosity")
     args = parser.parse_args()
 
@@ -212,6 +213,8 @@ def main():
 
     if args.verbose:
         g.printVerbose()
+
+    Global.backend = args.backend
 
     if args.command == "install":
         g.installPackages()
