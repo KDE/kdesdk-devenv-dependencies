@@ -10,6 +10,10 @@ from functools import reduce
 import concurrent.futures
 import json
 
+# for apt
+import urllib.request
+
+# for pk
 import gi
 gi.require_version('PackageKitGlib', '1.0')
 from gi.repository import PackageKitGlib as packagekit
@@ -53,13 +57,18 @@ def progressCallback(progress, type, user_data):
     #print('  ', type.value_name, 'package:', progress.props.package_id, ':', progress.props.percentage, '%')
 
 
+def restQuery(url):
+    response = urllib.request.urlopen(url)
+    ret = json.loads(response.read().decode('utf-8'))
+    #print("fuuuu", url, ret)
+    return ret
+
 class RequirementType(Enum):
     Needed = 0
     Suggested = 1
 
-
 class Global:
-    debArchitecture = None
+    repositories = None
 
     packages = {}
     packagesNotFound = []
@@ -117,12 +126,16 @@ class Global:
             end = output.index(b' ')
             packages = [ output[start:end].decode("utf-8") ] # only use the first alternative, pacman will sort them by repository precedence
         #Debian
-        elif shutil.which("apt-file"):
-            if not Global.debArchitecture:
-                Global.debArchitecture = subprocess.check_output(["dpkg", "--print-architecture"]).decode("utf-8").strip()
-            prefix = "^/usr/bin/" if isExecutable else "/"
-            fileName = fileName.replace("+", "\+") # prepare for regex
-            packages = subprocess.check_output(["apt-file", "search", "--package-only", "-x", prefix + fileName + "$", "--arch", Global.debArchitecture]).decode("utf-8").strip().split()
+        elif shutil.which("apt-get"):
+            if not Global.repositories:
+                Global.repositories = restQuery('https://contents.neon.kde.org/v1/pools')["neon"]
+            prefix = "usr/bin/" if isExecutable else "/"
+            packages = []
+            for repo in Global.repositories:
+                packages = [v[0] for v in restQuery('https://contents.neon.kde.org/v1/find/' + repo + '?q=*' + prefix + fileName).values()]
+                if packages:
+                    break
+            #print("pac", fileName, packages)
         #PackageKit
         elif shutil.which("pkcon"):
             result = client.search_files(0, [fileName], None, progressCallback, None)
