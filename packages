@@ -63,6 +63,12 @@ class Contents:
             return ret
 
     class Archive:
+        overrides = {
+            "usr/bin/gcc": "build-essential",
+            "usr/bin/g++": "build-essential",
+            "usr/bin/make": "build-essential"
+        }
+
         def __init__(self, id):
             self.id = id
             self.connection = Contents.Connection()
@@ -71,6 +77,10 @@ class Contents:
             return self.connection.getJSON(('find/%s?q=*%s' % (self.id, file)))
 
         def findPackageForFile(self, file):
+            try:
+                return self.overrides[file]
+            except:
+                pass
             payload = self.findFile(file)
             if not payload:
                 return None
