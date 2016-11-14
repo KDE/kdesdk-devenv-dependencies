@@ -21,6 +21,13 @@
         </screenshot>
     </screenshots>
 
+    <suggests>
+        <id>org.kde.kate.desktop</id>
+        <id>org.kde.kdevelop.desktop</id>
+        <id>org.kde.plasma.themeexplorer.desktop</id>
+        <id>org.kde.plasma.lookandfeelexplorer.desktop</id>
+    </suggests>
+
     <url type="help">https://techbase.kde.org/Development/Tutorials</url>
     <project_group>KDE</project_group>
 </component>
