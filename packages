@@ -218,12 +218,12 @@ def main():
     parser.add_argument("--verbose", action='store_true', help="increase output verbosity")
     args = parser.parse_args()
 
+    Global.backend = args.backend
+
     g = Global()
 
     if args.verbose:
         g.printVerbose()
-
-    Global.backend = args.backend
 
     if args.command == "install":
         g.installPackages()
