@@ -4,6 +4,7 @@ import sys
 import json
 import hashlib
 import subprocess
+import datetime
 
 def md5(fname):
     hash_md5 = hashlib.md5()
@@ -20,7 +21,8 @@ def main():
         replacements = {
             "@DEPENDS@": " ".join(deps["required"]),
             "@OPTDEPENDS@": " ".join(deps["suggested"]),
-            "@MD5@": md5("org.kde.development.appdata.xml")
+            "@MD5@": md5("org.kde.development.appdata.xml"),
+            "@PKGVER@": datetime.datetime.now().strftime('%Y%m%d')
         }
 
         for line in infile:

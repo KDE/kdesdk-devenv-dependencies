@@ -1,6 +1,6 @@
 pkgname=kde-development-environment
-pkgver=r4327.f537e89
-pkgrel=2
+pkgver=@PKGVER@
+pkgrel=1
 pkgdesc='KDE Development Environment'
 arch=(any)
 url='https://phabricator.kde.org/T3722'
@@ -8,20 +8,10 @@ license=(LGPL)
 depends=(@DEPENDS@)
 optdepends=(@OPTDEPENDS@)
 makedepends=()
-groups=(kde)
 source=(org.kde.development.appdata.xml)
 md5sums=('@MD5@')
 noextract=()
 
 package() {
-    install "$srcdir/org.kde.development.appdata.xml" "$pkgdir/org.kde.development.appdata.xml"
-}
-
-
-pkgver() {
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
-
-package() {
-    install org.kde.development.appdata.xml "$pkgdir/org.kde.development.appdata.xml"
+    install -Dm644 org.kde.development.appdata.xml "$pkgdir"/usr/share/metainfo/org.kde.development.appdata.xml
 }
