@@ -19,8 +19,8 @@ def main():
 
     with open('archlinux/PKGBUILD.in') as infile, open('archlinux-output/PKGBUILD', 'w') as outfile:
         replacements = {
-            "@DEPENDS@": " ".join(deps["required"]),
-            "@OPTDEPENDS@": " ".join(deps["suggested"]),
+            "@DEPENDS@": "\n         ".join(deps["required"]),
+            "@OPTDEPENDS@": "\n            ".join(deps["suggested"]),
             "@MD5@": md5("org.kde.development.appdata.xml"),
             "@PKGVER@": datetime.datetime.now().strftime('%Y%m%d')
         }
