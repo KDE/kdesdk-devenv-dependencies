@@ -87,7 +87,7 @@ class Contents:
             assert len(payload.keys()) == 1
             # Nested list since we don't resolve files, simply pick first.
             packages = list(payload.values())[0]
-            assert len(packages) == 1
+            assert len(packages) == 1, "Cannot find which package to use for " + file
             return packages[0]
 
         def findAllPackages(self, file):
