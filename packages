@@ -33,6 +33,7 @@ neededBinaries =  [
     "clang",
     "make",
     "ninja",
+    "msgfmt" #it's needed when including ki18n
     #"clazy",
 ]
 
