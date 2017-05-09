@@ -55,11 +55,12 @@ class RequirementType(Enum):
 
 class Contents:
     class Connection:
-        def __init__(self, urlBase = 'https://contents.neon.kde.org/v1'):
+        def __init__(self, urlBase = 'https://contents.neon.kde.org/v2'):
             self.urlBase = urlBase
 
         def getJSON(self, path):
-            response = urllib.request.urlopen("%s/%s" % (self.urlBase, path))
+            url = "%s/%s" % (self.urlBase, path)
+            response = urllib.request.urlopen(url)
             ret = json.loads(response.read().decode('utf-8'))
             return ret
 
@@ -75,7 +76,7 @@ class Contents:
             self.connection = Contents.Connection()
 
         def findFile(self, file):
-            return self.connection.getJSON(('find/%s?q=*%s' % (self.id, file)))
+            return self.connection.getJSON(('findFirst/%s?q=*%s' % (self.id, file)))
 
         def findPackageForFile(self, file):
             try:
