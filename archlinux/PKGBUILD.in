@@ -16,5 +16,6 @@ md5sums=('@MD5@')
 noextract=()
 
 package() {
-    install -Dm644 org.kde.development.appdata.xml "$pkgdir"/usr/share/metainfo/org.kde.development.appdata.xml
+    install -Dm644 org.kde.development.appdata.xml "$pkgdir"/usr/share/metainfo/
+    install -Dm644 kdesdk-devenv-dependencies.svg "$pkgdir"/usr/share/icons/hicolor/scalable/apps/
 }
