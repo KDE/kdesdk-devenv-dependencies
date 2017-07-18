@@ -11,8 +11,8 @@ license=(LGPL)
 depends=(@DEPENDS@)
 optdepends=(@OPTDEPENDS@)
 makedepends=()
-source=(org.kde.development.appdata.xml)
-md5sums=('@MD5@')
+source=(org.kde.development.appdata.xml kdesdk-devenv-dependencies.svg)
+sha256sums=(@SHA256@)
 noextract=()
 
 package() {
