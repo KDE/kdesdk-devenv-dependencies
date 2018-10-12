@@ -5,7 +5,7 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-2.0+</project_license>
     <name>KDE Development</name>
-    <icon type="remote">https://cgit.kde.org/breeze-icons.git/plain/icons/categories/32/applications-development.svg</icon>
+    <icon type="remote">https://cdn.kde.org/screenshots/kdesdk-devenv-dependencies/applications-development.svg</icon>
     <summary>A development environment for Qt and KDE Applications</summary>
     <description>
         <p>Install everything you need for a full KDE development system for developing your own software or extending existing one.</p>
@@ -14,10 +14,10 @@
 
     <screenshots>
         <screenshot type="default">
-            <image>https://www.kdevelop.org/sites/www.kdevelop.org/files/inline-images/kdevelop5-breeze_2.png</image>
+            <image>https://cdn.kde.org/screenshots/kdesdk-devenv-dependencies/kdevelop5-breeze_2.png</image>
         </screenshot>
         <screenshot>
-            <image>https://vizzzion.org/blog/wp-content/uploads/2015/02/cuttlefish.png</image>
+            <image>https://cdn.kde.org/screenshots/kdesdk-devenv-dependencies/cuttlefish.png</image>
         </screenshot>
     </screenshots>
 
