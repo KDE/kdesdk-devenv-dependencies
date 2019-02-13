@@ -4,12 +4,12 @@
     <id>org.kde.development</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-2.0+</project_license>
-    <name>KDE Development</name>
+    <name>KDE Software Development Kit</name>
     <icon type="remote">https://cdn.kde.org/screenshots/kdesdk-devenv-dependencies/applications-development.svg</icon>
-    <summary>A development environment for Qt and KDE Applications</summary>
+    <summary>A full SDK for developing Qt and KDE Applications</summary>
     <description>
-        <p>Install everything you need for a full KDE development system for developing your own software or extending existing one.</p>
-        <p>It will install all required dependencies for compiling most KDE software (Qt, KDE Frameworks, etc) and will offer to install the tools we've created to help the KDE development.</p>
+        <p>This is the KDE SDK: everything you need for developing Qt-based KDE software.</p>
+        <p>It will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.</p>
     </description>
 
     <screenshots>
