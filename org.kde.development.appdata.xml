@@ -11,6 +11,7 @@
   <name xml:lang="it">Strumenti di sviluppo dei programmi di KDE</name>
   <name xml:lang="nl">KDE Software Development Kit</name>
   <name xml:lang="nn">KDE Software Development Kit</name>
+  <name xml:lang="pt-BR">KDE SDK</name>
   <name xml:lang="sk">KDE sada na vývoj softvéru</name>
   <name xml:lang="sl">KDE Software Development Kit</name>
   <name xml:lang="uk">Набір для розробки програмного забезпечення KDE</name>
@@ -24,6 +25,7 @@
   <summary xml:lang="it">Una SDK completa per sviluppare applicazioni Qt e KDE</summary>
   <summary xml:lang="nl">Een volledige SDK voor ontwikkeling van Qt en KDE toepassingen</summary>
   <summary xml:lang="nn">Full SDK for utvikling av Qt- og KDE-program</summary>
+  <summary xml:lang="pt-BR">Um kit de desenvolvimento de software (SDK) completo para desenvolver aplicativos Qt e KDE</summary>
   <summary xml:lang="sk">Plné SDK na vývoj Qt a KDE aplikácií</summary>
   <summary xml:lang="sl">Popoln komplet za razvoj programske opreme za aplikacij Qt in KDE</summary>
   <summary xml:lang="uk">Повний набір для розробки програмного забезпечення на основі Qt і програм KDE</summary>
@@ -37,6 +39,7 @@
     <p xml:lang="it">Questa è una SDK di KDE: tutto quello che ti può servire per sviluppare programmi di KDE basati su Qt.</p>
     <p xml:lang="nl">Dit is de KDE SDK: alles wat u nodig hebt voor ontwikkeling van op Qt gebaseerde KDE software.</p>
     <p xml:lang="nn">Dette er KDE-SDK-en: Alt du treng for å utvikla Qt-baserte KDE-program.</p>
+    <p xml:lang="pt-BR">Este é o KDE SDK: tudo que você precisa para desenvolver softwares KDE baseado em Qt.</p>
     <p xml:lang="sl">To je komplet za razvoj programske opreme KDE; vse kar potrebujete za razvoj aplikacij s Qt za programe KDE</p>
     <p xml:lang="uk">Це набір бібліотек для розробки програмного забезпечення KDE: усе, що вам знадобиться для розробки програмного забезпечення KDE на основі Qt.</p>
     <p xml:lang="x-test">xxThis is the KDE SDK: everything you need for developing Qt-based KDE software.xx</p>
@@ -48,6 +51,7 @@
     <p xml:lang="it">Installerà le dipendenze richieste per la compilazione della maggior parte dei programmi di KDE (Frameworks, Applications e Plasma). Offrirà anche la possibilità di installare strumenti che semplificano lo sviluppo di KDE, tra cui l'IDE di KDevelop, l'editor di testo di Kate e il visualizzatore di icone di Cuttlefish.</p>
     <p xml:lang="nl">Het zal de vereiste afhankelijkheden voor compileren van de meeste KDE software (Frameworks, Applications en Plasma) installeren. Het zal ook het installeren van hulpmiddelen bieden die ontwikkelen in KDE gemakkelijk maakt, inclusief de KDevelop IDE, Kate tekstbewerker en de Cuttlefish pictogramviewer.</p>
     <p xml:lang="nn">Han vil installera dei nødvendige avhengnadane for kompilering av dei fleste KDE-programma (Frameworks, Applications og Plasma). Han vil òg tilby å installera verktøy som gjev KDE-utvikling lettare, inkludert IDE-en KDevelop, skrive­programmet Kate og ikon­visaren Cuttlefish.</p>
+    <p xml:lang="pt-BR">Ele irá instalar todas as dependências necessárias para compilar a maioria dos softwares KDE (Frameworks, Applications e Plasma). Também irá oferecer instalar ferramentas que tornam fácil o desenvolvimento do KDE, incluindo a IDE KDevelop, o editor de textos Kate e o visualizador de ícones Cuttlefish.</p>
     <p xml:lang="sl">Namestil bo vsa potrebna orodja za prevajanje večine programske opreme KDE(Frameworks, Applications, and Plasma)). Ponudil bo tudi namestitev orodij ki olajšajo razvoj KDE, vključno z razvojnim okoljem KDevelop, urejevalnikom besedil Kate in pregledovalnikom ikon Cuttlefish.</p>
     <p xml:lang="uk">Буде встановлено усі потрібні залежності для збирання більшості програмного забезпечення KDE (бібліотек, програм і Плазми). Також буде запропоновано встановити інструменти, які полегшують розробку KDE, зокрема комплексне середовище для розробки KDevelop, текстовий редактор Kate та програму для перегляду піктограм Cuttlefish.</p>
     <p xml:lang="x-test">xxIt will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.xx</p>
