@@ -160,7 +160,7 @@ class Global:
 
         #ArchLinux
         if Global.backend == "archlinux":
-            cmd = ["pacman", "--machinereadable", "-Fs", fileName]
+            cmd = ["pacman", "--machinereadable", "-F", fileName]
             output = subprocess.check_output(cmd)
             process = output.split(b'\0')
             packages = [ process[1].decode("utf-8") ] # only use the first alternative, pacman will sort them by repository precedence
@@ -183,7 +183,7 @@ class Global:
         #ArchLinux
         if Global.backend == "archlinux":
             fileNamerx = fileName.replace("*", ".*")
-            cmd = ["pacman", "--machinereadable", "-Fsx", fileNamerx]
+            cmd = ["pacman", "--machinereadable", "-Fx", fileNamerx]
             output = subprocess.check_output(cmd)
             lines = output.split(b'\n')
             packages = [line.split(b'\0')[1].decode("utf-8") for line in lines if len(line)>0]
