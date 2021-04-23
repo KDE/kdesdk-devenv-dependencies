@@ -6,6 +6,7 @@
   <name>KDE Software Development Kit</name>
   <name xml:lang="ca">Joc de desenvolupament de programari del KDE</name>
   <name xml:lang="ca-valencia">Joc de desenvolupament de programari del KDE</name>
+  <name xml:lang="de">KDE Software Development Kit</name>
   <name xml:lang="el">Εργαλειοθήκη ανάπτυξης KDE λογισμικού (SDK)</name>
   <name xml:lang="en-GB">KDE Software Development Kit</name>
   <name xml:lang="es">Kit de desarrollo de software de KDE</name>
@@ -26,6 +27,7 @@
   <summary>A full SDK for developing Qt and KDE Applications</summary>
   <summary xml:lang="ca">Un SDK complet per a desenvolupar aplicacions Qt i KDE</summary>
   <summary xml:lang="ca-valencia">Un SDK complet per a desenvolupar aplicacions Qt i KDE</summary>
+  <summary xml:lang="de">Ein vollständiges SDK für die Entwicklung von Qt und KDE-Anwendungen</summary>
   <summary xml:lang="el">Ένα πλήρες SDK για την ανάπτυξη Qt και KDE εφαρμογών</summary>
   <summary xml:lang="en-GB">A full SDK for developing Qt and KDE Applications</summary>
   <summary xml:lang="es">Un completo SDK para desarrollar aplicaciones de Qt y de KDE</summary>
