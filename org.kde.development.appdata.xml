@@ -46,6 +46,7 @@
     <p>This is the KDE SDK: everything you need for developing Qt-based KDE software.</p>
     <p xml:lang="ca">Aquest és el SDK del KDE: tot el que cal per a desenvolupar programari KDE basat en les Qt.</p>
     <p xml:lang="ca-valencia">Aquest és el SDK del KDE: tot el que cal per a desenvolupar programari KDE basat en les Qt.</p>
+    <p xml:lang="de">Dies ist das KDE-SDK (Software Development Kit): Alles was Sie zur Entwicklung von KDE-Software auf der Basis der Qt-Bibliotheken benötigen.</p>
     <p xml:lang="el">Αυτό είναι το SDK του KDE: ό,τι χρειάζεστε για να αναπτύξετε KDE λογισμικό με βάση την Qt.</p>
     <p xml:lang="en-GB">This is the KDE SDK: everything you need for developing Qt-based KDE software.</p>
     <p xml:lang="es">Esto es KDE SDK: todo lo que necesita para desarrollar software de KDE basado en Qt.</p>
@@ -62,6 +63,7 @@
     <p>It will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.</p>
     <p xml:lang="ca">Instal·larà les dependències requerides per a compilar la majoria del programari KDE (Frameworks, aplicacions i Plasma). També oferirà la instal·lació d'eines que faciliten el desenvolupament del KDE, incloent l'IDE KDevelop, l'editor de text Kate i el visor d'icones Cuttlefish.</p>
     <p xml:lang="ca-valencia">Instal·larà les dependències requerides per a compilar la majoria del programari KDE (Frameworks, aplicacions i Plasma). També oferirà la instal·lació d'eines que faciliten el desenvolupament del KDE, incloent l'IDE KDevelop, l'editor de text Kate i el visor d'icones Cuttlefish.</p>
+    <p xml:lang="de">Es installiert alle notwendigen Abhängigkeiten für das Kompilieren von KDE-Software wie Frameworks, Anwendungen and Plasma. Damit können Sie auch Hilfsprogramme wie die integrierte Entwicklungsumgebung KDevelop, den Texteditor Kate und Cuttlefish zur Anzeige von Symbolen installieren.</p>
     <p xml:lang="el">Θα εγκαταστήσει τις απαραίτητες εξαρτήσεις για τη μεταγλώττιση του μεγαλύτερου μέρους του λογισμικού του KDE (Frameworks, Εφαρμογές και Plasma). Θα προτείνει επίσης την εγκατάσταση εργαλείων που θα διευκολύνουν την ανάπτυξη του KDE μαζί και του KDevelp IDE, τον κειμενογράφου Kate και του προγράμματος προβολής εικονιδίων Cuttlefish.</p>
     <p xml:lang="en-GB">It will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.</p>
     <p xml:lang="es">Instalará las dependencias necesarias para compilar la mayor parte del software de KDE (Frameworks, aplicaciones y Plasma). También ofrecerá la posibilidad de instalar herramientas para facilitar el desarrollo de KDE, incluyendo el IDE KDevelop, el editor de texto Kate y el visor de iconos Cuttlefish.</p>
