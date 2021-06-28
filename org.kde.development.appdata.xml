@@ -12,6 +12,7 @@
   <name xml:lang="es">Kit de desarrollo de software de KDE</name>
   <name xml:lang="et">KDE arenduskomplekt</name>
   <name xml:lang="fr">Bibliothèque de développement de logiciels pour KDE</name>
+  <name xml:lang="hi">केडीई सॉफ़टवेयर विकास के लिए उपकरण समूह</name>
   <name xml:lang="id">KDE Software Development Kit</name>
   <name xml:lang="it">Strumenti di sviluppo dei programmi di KDE</name>
   <name xml:lang="ko">KDE 소프트웨어 개발 도구</name>
@@ -34,6 +35,7 @@
   <summary xml:lang="en-GB">A full SDK for developing Qt and KDE Applications</summary>
   <summary xml:lang="es">Un completo SDK para desarrollar aplicaciones de Qt y de KDE</summary>
   <summary xml:lang="fr">Une bibliothèque complète pour le développement d'applications Qt et KDE</summary>
+  <summary xml:lang="hi">क्यूट एवं केडीई के अनुप्रयोगों के विकास के लिए उपकरण समूह</summary>
   <summary xml:lang="id">Sebuah SDK lengkap untuk mengembangkan Aplikasi Qt dan KDE</summary>
   <summary xml:lang="it">Una SDK completa per sviluppare applicazioni Qt e KDE</summary>
   <summary xml:lang="ko">Qt와 KDE 프로그램을 개발할 수 있는 완전한 SDK</summary>
@@ -55,6 +57,7 @@
     <p xml:lang="en-GB">This is the KDE SDK: everything you need for developing Qt-based KDE software.</p>
     <p xml:lang="es">Esto es KDE SDK: todo lo que necesita para desarrollar software de KDE basado en Qt.</p>
     <p xml:lang="fr">Ceci est une bibliothèque KDE, tout ce dont vous avez besoin pour le développement de logiciels KDE utilisant Qt.</p>
+    <p xml:lang="hi">यह केडीई सॉफ़टवेयर विकास उपकरण समूह है: क्यूट आधारित केडीई सॉफ़टवेयर के विकास के लिए ज़रूरतमन्द है</p>
     <p xml:lang="id">Ini adalah KDE SDK: semua yang kamu butuhkan untuk mengembangkan perangkat lunak KDE berbasis Qt.</p>
     <p xml:lang="it">Questa è una SDK di KDE: tutto quello che ti può servire per sviluppare programmi di KDE basati su Qt.</p>
     <p xml:lang="ko">KDE SDK입니다: Qt 기반 KDE 소프트웨어를 개발할 때 필요한 모든 도구입니다.</p>
@@ -74,6 +77,7 @@
     <p xml:lang="en-GB">It will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.</p>
     <p xml:lang="es">Instalará las dependencias necesarias para compilar la mayor parte del software de KDE (Frameworks, aplicaciones y Plasma). También ofrecerá la posibilidad de instalar herramientas para facilitar el desarrollo de KDE, incluyendo el IDE KDevelop, el editor de texto Kate y el visor de iconos Cuttlefish.</p>
     <p xml:lang="fr">Ceci installera les dépendances nécessaires pour la compilation de la plupart des logiciels de KDE (Atelier, applications et Plasma). Il vous offrira aussi d'installer des outils pour rendre les développement sous KDE faciles, en incluant l'environnement de développement KDevelop, l'éditeur de texte Kate et l'afficheur d'icônes Cuttlefish.</p>
+    <p xml:lang="hi">यह केडीई सॉफ़टवेयर (फ्रेमवर्क्स, अनुप्रयोग, प्लाज़मा) को कम्पाईल करने के लिए डिपेन्डेन्सीस स्थापित करेगा। यह केडीई के विकास को और आसान बनाने के लिए अतिरिक्त अनुप्रयोगों को स्थापित करने का सुझाव देगा, जैसे की, केडेवेलेप आइडीई, केट पाठ संपादक, और कटलफ़िश प्रतीक प्रदर्शक।</p>
     <p xml:lang="id">Ini akan menginstal dependensi yang diperlukan untuk mengkompilasi sebagian besar perangkat lunak KDE (Frameworks, Applications, dan Plasma). Ia juga akan menawarkan untuk menginstal alat yang membuat pengembangan KDE lebih mudah, termasuk KDevelop IDE, editor teks Kate, dan penampil ikon Cuttlefish.</p>
     <p xml:lang="it">Installerà le dipendenze richieste per la compilazione della maggior parte dei programmi di KDE (Frameworks, Applications e Plasma). Offrirà anche la possibilità di installare strumenti che semplificano lo sviluppo di KDE, tra cui l'IDE di KDevelop, l'editor di testo di Kate e il visualizzatore di icone di Cuttlefish.</p>
     <p xml:lang="ko">대부분의 KDE 소프트웨어(프레임워크, 프로그램, Plasma)를 컴파일할 때 필요한 의존성을 설치합니다. KDE 개발을 쉽게 도와 줄 수 있는 도구인 KDevelop IDE, Kate 텍스트 편집기, Cuttlefish 아이콘 뷰어를 설치합니다.</p>
