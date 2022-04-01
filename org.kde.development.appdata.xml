@@ -26,6 +26,7 @@
   <name xml:lang="sk">KDE sada na vývoj softvéru</name>
   <name xml:lang="sl">KDE Software Development Kit</name>
   <name xml:lang="sv">KDE Programvaruutvecklingsmiljö</name>
+  <name xml:lang="tr">KDE Yazılım Geliştirme Takımı</name>
   <name xml:lang="uk">Набір для розробки програмного забезпечення KDE</name>
   <name xml:lang="x-test">xxKDE Software Development Kitxx</name>
   <name xml:lang="zh-CN">KDE 软件开发套件</name>
@@ -52,6 +53,7 @@
   <summary xml:lang="sk">Plné SDK na vývoj Qt a KDE aplikácií</summary>
   <summary xml:lang="sl">Popoln komplet za razvoj programske opreme za aplikacij Qt in KDE</summary>
   <summary xml:lang="sv">En fullständig programvaruutvecklingsmiljö för utveckling av Qt- och KDE-program</summary>
+  <summary xml:lang="tr">Qt ve KDE uygulamaları geliştirmek için tam bir Yazılım Geliştirme Takımı</summary>
   <summary xml:lang="uk">Повний набір для розробки програмного забезпечення на основі Qt і програм KDE</summary>
   <summary xml:lang="x-test">xxA full SDK for developing Qt and KDE Applicationsxx</summary>
   <description>
@@ -76,6 +78,7 @@
     <p xml:lang="ru">Это набор библиотек для разработки программного обеспечения KDE: всё, что вам понадобится для разработки основанных на Qt программ KDE.</p>
     <p xml:lang="sl">To je komplet za razvoj programske opreme KDE; vse kar potrebujete za razvoj aplikacij s Qt za programe KDE</p>
     <p xml:lang="sv">Det här är KDE:s Programvaruutvecklingsmiljö: allt du behöver för att utveckla Qt-baserad KDE-programvara.</p>
+    <p xml:lang="tr">Bu, KDE Yazılm Geliştirme Takımıdır: Qt tabanlı KDE yazılımları geliştirmek için gereksinim duyduğunuz her şey.</p>
     <p xml:lang="uk">Це набір бібліотек для розробки програмного забезпечення KDE: усе, що вам знадобиться для розробки програмного забезпечення KDE на основі Qt.</p>
     <p xml:lang="x-test">xxThis is the KDE SDK: everything you need for developing Qt-based KDE software.xx</p>
     <p>It will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.</p>
@@ -99,6 +102,7 @@
     <p xml:lang="ru">Будут установлены необходимые зависимости для сборки большинства программ KDE (библиотек, приложений и Plasma). Также будет предложена установка инструментов, облегчающих разработку для KDE, включая среду разработки KDevelop, текстовый редактор Kate и средство просмотра иконок Cuttlefish.</p>
     <p xml:lang="sl">Namestil bo vsa potrebna orodja za prevajanje večine programske opreme KDE(Frameworks, Applications, and Plasma)). Ponudil bo tudi namestitev orodij ki olajšajo razvoj KDE, vključno z razvojnim okoljem KDevelop, urejevalnikom besedil Kate in pregledovalnikom ikon Cuttlefish.</p>
     <p xml:lang="sv">Det installerar nödvändiga beroenden för att kompilera det mesta av KDE:s programvara (Ramverk, Program, och Plasma). Det erbjuder också att installera verktyg som gör KDE-utveckling enkel, inklusive den integrerad utvecklingsmiljön KDevelop, texteditorn Kate, och ikonvisningsverktyget Cuttlefish.</p>
+    <p xml:lang="tr">Çoğu KDE yazılımını derlemek için gereken bağımlılıkları kurar (Kod Kitaplıkları, Uygulamalar ve Plasma). Ayrıca KDE geliştirmesini kolaylaştıran diğer araçları da kurmayı önerir; örneğin, KDevelop Tümleşik Geliştirme Ortamı, Kate metin düzenleyicisi ve Cuttlefish simge görüntüleyici.</p>
     <p xml:lang="uk">Буде встановлено усі потрібні залежності для збирання більшості програмного забезпечення KDE (бібліотек, програм і Плазми). Також буде запропоновано встановити інструменти, які полегшують розробку KDE, зокрема комплексне середовище для розробки KDevelop, текстовий редактор Kate та програму для перегляду піктограм Cuttlefish.</p>
     <p xml:lang="x-test">xxIt will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.xx</p>
   </description>
