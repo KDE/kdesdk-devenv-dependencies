@@ -9,6 +9,7 @@
   <name xml:lang="de">KDE Software Development Kit</name>
   <name xml:lang="el">Εργαλειοθήκη ανάπτυξης KDE λογισμικού (SDK)</name>
   <name xml:lang="en-GB">KDE Software Development Kit</name>
+  <name xml:lang="eo">Programevolua Ilaro de KDE</name>
   <name xml:lang="es">Kit de desarrollo de software de KDE</name>
   <name xml:lang="et">KDE arenduskomplekt</name>
   <name xml:lang="eu">KDE Softwarea garatzeko tresna-multzoa</name>
@@ -40,6 +41,7 @@
   <summary xml:lang="de">Ein vollständiges SDK für die Entwicklung von Qt und KDE-Anwendungen</summary>
   <summary xml:lang="el">Ένα πλήρες SDK για την ανάπτυξη Qt και KDE εφαρμογών</summary>
   <summary xml:lang="en-GB">A full SDK for developing Qt and KDE Applications</summary>
+  <summary xml:lang="eo">Plena SDK por evolui Qt- kaj KDE-aplikaĵojn</summary>
   <summary xml:lang="es">Un completo SDK para desarrollar aplicaciones de Qt y de KDE</summary>
   <summary xml:lang="eu">Qt eta KDE aplikazioak garatzeko SDK oso bat</summary>
   <summary xml:lang="fi">Täysi SDK Qt- ja KDE-sovellusten kehittämiseen</summary>
@@ -69,6 +71,7 @@
     <p xml:lang="de">Dies ist das KDE-SDK (Software Development Kit): Alles was Sie zur Entwicklung von KDE-Software auf der Basis der Qt-Bibliotheken benötigen.</p>
     <p xml:lang="el">Αυτό είναι το SDK του KDE: ό,τι χρειάζεστε για να αναπτύξετε KDE λογισμικό με βάση την Qt.</p>
     <p xml:lang="en-GB">This is the KDE SDK: everything you need for developing Qt-based KDE software.</p>
+    <p xml:lang="eo">Ĉi tio estas la KDE SDK: Ĉio kion vi bezonas por evolui Qt- kaj KDE-programaron.</p>
     <p xml:lang="es">Esto es KDE SDK: todo lo que necesita para desarrollar software de KDE basado en Qt.</p>
     <p xml:lang="eu">KDE SDK da hau: Qt oinarriko KDE softwarea garatzeko behar duzun guztia.</p>
     <p xml:lang="fi">Tämä on KDE SDK: kaikki mitä tarvitaan Qt-pohjaisten KDE-ohjelmien kehittämiseksi.</p>
