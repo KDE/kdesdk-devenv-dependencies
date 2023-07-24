@@ -51,7 +51,7 @@
   <summary xml:lang="id">Sebuah SDK lengkap untuk mengembangkan Aplikasi Qt dan KDE</summary>
   <summary xml:lang="it">Una SDK completa per sviluppare applicazioni Qt e KDE</summary>
   <summary xml:lang="ka">Qt-ის და KDE-ის ინსტრუმენტები პროგრამული უზრუნველყოფის განვითარებისთვის</summary>
-  <summary xml:lang="ko">Qt와 KDE 프로그램을 개발할 수 있는 완전한 SDK</summary>
+  <summary xml:lang="ko">Qt와 KDE 앱을 개발할 수 있는 완전한 SDK</summary>
   <summary xml:lang="nl">Een volledige SDK voor ontwikkeling van Qt en KDE toepassingen</summary>
   <summary xml:lang="nn">Full SDK for utvikling av Qt- og KDE-program</summary>
   <summary xml:lang="pl">Pełny SDK do rozwoju programów Qt oraz KDE</summary>
@@ -109,7 +109,7 @@
     <p xml:lang="id">Ini akan menginstal dependensi yang diperlukan untuk mengkompilasi sebagian besar perangkat lunak KDE (Frameworks, Applications, dan Plasma). Ia juga akan menawarkan untuk menginstal alat yang membuat pengembangan KDE lebih mudah, termasuk KDevelop IDE, editor teks Kate, dan penampil ikon Cuttlefish.</p>
     <p xml:lang="it">Installerà le dipendenze richieste per la compilazione della maggior parte dei programmi di KDE (Frameworks, Applications e Plasma). Offrirà anche la possibilità di installare strumenti che semplificano lo sviluppo di KDE, tra cui l'IDE di KDevelop, l'editor di testo di Kate e il visualizzatore di icone di Cuttlefish.</p>
     <p xml:lang="ka">დააყენებს საჭირო დამოკიდებულებებს KDE-ის აპლიკაციების უმრავლესობის დასაყენებლად (ფრეიმვორკები, აპლიკაციები და Plasma). პაკეტში ასევე შედის ხელსაწყოები, რომლებიც KDE-ის აპლიკაციის შექმნას კიდევ უფრო გაგიადვილებთ (KDevelop IDE, ტექსტური რედაქტორი Kate და ხატულების პროგრამა Cuttlefish).</p>
-    <p xml:lang="ko">대부분의 KDE 소프트웨어(프레임워크, 프로그램, Plasma)를 컴파일할 때 필요한 의존성을 설치합니다. KDE 개발을 쉽게 도와 줄 수 있는 도구인 KDevelop IDE, Kate 텍스트 편집기, Cuttlefish 아이콘 뷰어를 설치합니다.</p>
+    <p xml:lang="ko">대부분의 KDE 소프트웨어(프레임워크, 앱, Plasma)를 컴파일할 때 필요한 의존성을 설치합니다. KDE 개발을 쉽게 도와 줄 수 있는 도구인 KDevelop IDE, Kate 텍스트 편집기, Cuttlefish 아이콘 뷰어를 설치합니다.</p>
     <p xml:lang="nl">Het zal de vereiste afhankelijkheden voor compileren van de meeste KDE software (Frameworks, Applications en Plasma) installeren. Het zal ook het installeren van hulpmiddelen bieden die ontwikkelen in KDE gemakkelijk maakt, inclusief de KDevelop IDE, Kate tekstbewerker en de Cuttlefish pictogramviewer.</p>
     <p xml:lang="nn">Han vil installera dei nødvendige avhengnadane for kompilering av dei fleste KDE-programma (Frameworks, Applications og Plasma). Han vil òg tilby å installera verktøy som gjev KDE-utvikling lettare, inkludert IDE-en KDevelop, skrive­programmet Kate og ikon­visaren Cuttlefish.</p>
     <p xml:lang="pl">Wgra wymagane zależności do skompilowania większości programów KDE (Szkielety, Aplikacje oraz Plazma). Da także możliwość wgrania narzędzi, czyniących rozwój KDE łatwiejszym, a wśród nich IDE KDevelop, edytor tekstu Kate oraz przeglądarkę ikon Cuttlefish.</p>
