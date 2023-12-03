@@ -8,14 +8,14 @@ pkgdesc='Metapackage to install a full KDE development environment'
 arch=(any)
 url='https://phabricator.kde.org/T3722'
 license=(LGPL)
-optdepends=(@OPTDEPENDS@)
 makedepends=()
 source=(org.kde.development.appdata.xml kdesdk-devenv-dependencies.svg)
 sha256sums=(@SHA256@)
 noextract=()
 
 package() {
-    depends+=(@DEPENDS@)
+    depends=(@DEPENDS@)
+    optdepends=(@OPTDEPENDS@)
 
     install -Dm644 org.kde.development.appdata.xml "$pkgdir"/usr/share/metainfo/org.kde.development.appdata.xml
     install -Dm644 kdesdk-devenv-dependencies.svg "$pkgdir"/usr/share/icons/hicolor/scalable/apps/kdesdk-devenv-dependencies.svg
