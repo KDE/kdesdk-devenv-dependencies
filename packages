@@ -17,7 +17,7 @@ import urllib.request
 neededFiles = [
     "Qt6CoreConfig.cmake",
     "Qt6QuickConfig.cmake",
-    "Qt6WebEngineConfig.cmake",
+    "Qt6WebEngineCoreConfig.cmake",
 
     "ECMConfig.cmake",
     "KF6*Config.cmake",
