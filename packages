@@ -15,12 +15,12 @@ import io
 import urllib.request
 
 neededFiles = [
-    "Qt5CoreConfig.cmake",
-    "Qt5QuickConfig.cmake",
-    "Qt5WebEngineConfig.cmake",
+    "Qt6CoreConfig.cmake",
+    "Qt6QuickConfig.cmake",
+    "Qt6WebEngineConfig.cmake",
 
     "ECMConfig.cmake",
-    "KF5*Config.cmake",
+    "KF6*Config.cmake",
 ]
 
 neededBinaries =  [
