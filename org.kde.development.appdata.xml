@@ -15,7 +15,7 @@
   <name xml:lang="eu">KDE Softwarea garatzeko tresna-multzoa</name>
   <name xml:lang="fi">KDE:n ohjelmakehityspakki</name>
   <name xml:lang="fr">Bibliothèque de développement de logiciels pour KDE</name>
-  <name xml:lang="gl">Equipo de desenvolvemento de software de KDE</name>
+  <name xml:lang="gl">Equipo desenvolvedor de software de KDE</name>
   <name xml:lang="hi">केडीई सॉफ़टवेयर विकास के लिए उपकरण समूह</name>
   <name xml:lang="id">KDE Software Development Kit</name>
   <name xml:lang="it">Strumenti di sviluppo dei programmi di KDE</name>
@@ -47,7 +47,7 @@
   <summary xml:lang="eu">Qt eta KDE aplikazioak garatzeko SDK oso bat</summary>
   <summary xml:lang="fi">Täysi SDK Qt- ja KDE-sovellusten kehittämiseen</summary>
   <summary xml:lang="fr">Une bibliothèque complète pour le développement d'applications Qt et KDE</summary>
-  <summary xml:lang="gl">Un equipo de desenvolvemento de software completo para aplicacións de Qt e KDE</summary>
+  <summary xml:lang="gl">Un equipo desenvolvedor de software completo para aplicacións de Qt e KDE</summary>
   <summary xml:lang="hi">क्यूट एवं केडीई के अनुप्रयोगों के विकास के लिए उपकरण समूह</summary>
   <summary xml:lang="id">Sebuah SDK lengkap untuk mengembangkan Aplikasi Qt dan KDE</summary>
   <summary xml:lang="it">Una SDK completa per sviluppare applicazioni Qt e KDE</summary>
@@ -78,7 +78,7 @@
     <p xml:lang="eu">KDE SDK da hau: Qt oinarriko KDE softwarea garatzeko behar duzun guztia.</p>
     <p xml:lang="fi">Tämä on KDE SDK: kaikki mitä tarvitaan Qt-pohjaisten KDE-ohjelmien kehittämiseksi.</p>
     <p xml:lang="fr">Ceci est une bibliothèque KDE, tout ce dont vous avez besoin pour le développement de logiciels KDE utilisant Qt.</p>
-    <p xml:lang="gl">Este é o equipo de desenvolvemento de software de KDE: todo o que necesita para desenvolver software de KDE baseado en Qt.</p>
+    <p xml:lang="gl">Este é o equipo desenvolvedor de software de KDE: todo o que necesita para desenvolver software de KDE baseado en Qt.</p>
     <p xml:lang="hi">यह केडीई सॉफ़टवेयर विकास उपकरण समूह है: क्यूट आधारित केडीई सॉफ़टवेयर के विकास के लिए ज़रूरतमन्द है</p>
     <p xml:lang="id">Ini adalah KDE SDK: semua yang kamu butuhkan untuk mengembangkan perangkat lunak KDE berbasis Qt.</p>
     <p xml:lang="it">Questa è una SDK di KDE: tutto quello che ti può servire per sviluppare programmi di KDE basati su Qt.</p>
