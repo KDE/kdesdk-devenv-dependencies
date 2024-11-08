@@ -158,15 +158,15 @@ class Global:
     def searchFile(fileName, requirement, isExecutable):
         packages = None
 
+        prefix = "usr/bin/" if isExecutable else ""
         #ArchLinux
         if Global.backend == "archlinux":
-            cmd = ["pacman", "--machinereadable", "-F", fileName]
+            cmd = ["pacman", "--machinereadable", "-F", prefix + fileName]
             output = subprocess.check_output(cmd)
             process = output.split(b'\0')
             packages = [ process[1].decode("utf-8") ] # only use the first alternative, pacman will sort them by repository precedence
         #Debian
         elif Global.backend == "debian":
-            prefix = "usr/bin/" if isExecutable else "/"
             packages = []
             for repo in Contents.pools():
                 pkg = Contents.Archive(repo).findPackageForFile(prefix + fileName)
