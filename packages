@@ -40,7 +40,7 @@ neededBinaries =  [
 suggestedBinaries = [
     "plasmaengineexplorer",
     "plasmawindowed",
-    "cuttlefish",
+    "iconexplorer",
     "kate",
     "kdevelop"
 ]
