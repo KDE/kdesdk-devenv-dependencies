@@ -18,6 +18,7 @@
   <name xml:lang="gl">Equipo desenvolvedor de programas de KDE</name>
   <name xml:lang="he">ערכת פיתוח תוכנת KDE</name>
   <name xml:lang="hi">केडीई सॉफ़टवेयर विकास के लिए उपकरण समूह</name>
+  <name xml:lang="ia">Kit de Developpamento de KDE</name>
   <name xml:lang="id">KDE Software Development Kit</name>
   <name xml:lang="it">Strumenti di sviluppo dei programmi di KDE</name>
   <name xml:lang="ka">KDE-ის ინსტრუმენტები პროგრამული უზრუნველყოფის განვითარებისთვის</name>
@@ -52,6 +53,7 @@
   <summary xml:lang="gl">Un equipo desenvolvedor de programas completo para aplicacións de Qt e KDE.</summary>
   <summary xml:lang="he">SDK מלא לפיתוח יישומי Qt ו־KDE</summary>
   <summary xml:lang="hi">क्यूट एवं केडीई के अनुप्रयोगों के विकास के लिए उपकरण समूह</summary>
+  <summary xml:lang="ia">Un complete SDK per developpar Applicationes de Qt e KDE</summary>
   <summary xml:lang="id">Sebuah SDK lengkap untuk mengembangkan Aplikasi Qt dan KDE</summary>
   <summary xml:lang="it">Una SDK completa per sviluppare applicazioni Qt e KDE</summary>
   <summary xml:lang="ka">Qt-ის და KDE-ის ინსტრუმენტები პროგრამული უზრუნველყოფის განვითარებისთვის</summary>
@@ -85,6 +87,7 @@
     <p xml:lang="gl">Este é o equipo desenvolvedor de programas de KDE: todo o que necesita para desenvolver programas de KDE baseados en Qt.</p>
     <p xml:lang="he">זה ה־SDK של KDE: כל מה שדרוש כדי לפתוח תוכנות KDE מבוססות Qt.</p>
     <p xml:lang="hi">यह केडीई सॉफ़टवेयर विकास उपकरण समूह है: क्यूट आधारित केडीई सॉफ़टवेयर के विकास के लिए ज़रूरतमन्द है</p>
+    <p xml:lang="ia">Isto es le KDE SDK:  Toto que tu necessita per developpar software de KDE basate sur Qt.</p>
     <p xml:lang="id">Ini adalah KDE SDK: semua yang kamu butuhkan untuk mengembangkan perangkat lunak KDE berbasis Qt.</p>
     <p xml:lang="it">Questa è una SDK di KDE: tutto quello che ti può servire per sviluppare programmi di KDE basati su Qt.</p>
     <p xml:lang="ka">ეს KDE SDK-ა. ყველაფერი, რაც შეიძლება Qt-ზე ბაზირებული აპლიკაციების KDE-სთვის შექმნისთვის შეიძლება დაგჭირდეთ.</p>
@@ -116,6 +119,7 @@
     <p xml:lang="gl">Instalará as dependencias necesarias para compilar a maioría dos programas de KDE (infraestruturas, aplicacións e Plasma). Tamén ofrecerá instalar ferramentas para facilitar o desenvolvemento de KDE, como o contorno integrado de desenvolvemento KDevelop, o editor de texto Kate, ou o visor de iconas Cuttlefish.</p>
     <p xml:lang="he">הפעולה הזאת תתקין את כל חבילות התלות להידור רוב תוכנות KDE (תשתיות, יישומים ופלזמה). היא גם תציע להתקין כלים שמקלים על פיתוח KDE, כולל סביבת הפיתוח המשולבת KDevelop, עורך הטקסט Kate ומציג הסמלים Cuttlefish.</p>
     <p xml:lang="hi">यह केडीई सॉफ़टवेयर (फ्रेमवर्क्स, अनुप्रयोग, प्लाज़मा) को कम्पाईल करने के लिए डिपेन्डेन्सीस स्थापित करेगा। यह केडीई के विकास को और आसान बनाने के लिए अतिरिक्त अनुप्रयोगों को स्थापित करने का सुझाव देगा, जैसे की, केडेवेलेप आइडीई, केट पाठ संपादक, और कटलफ़िश प्रतीक प्रदर्शक।</p>
+    <p xml:lang="ia">Il installara le dependentias requirite per compilar le major parte del software de KDE (Frameworks, Applicationes e Plasma). Ilanque offerera installar instrumentos que face le developpamento de KDE facile, includente le IDE Kdevelop, le editor de texto Kate, e il visor de icone Cuttlefish.</p>
     <p xml:lang="id">Ini akan menginstal dependensi yang diperlukan untuk mengkompilasi sebagian besar perangkat lunak KDE (Frameworks, Applications, dan Plasma). Ia juga akan menawarkan untuk menginstal alat yang membuat pengembangan KDE lebih mudah, termasuk KDevelop IDE, editor teks Kate, dan penampil ikon Cuttlefish.</p>
     <p xml:lang="it">Installerà le dipendenze richieste per la compilazione della maggior parte dei programmi di KDE (Frameworks, Applications e Plasma). Offrirà anche la possibilità di installare strumenti che semplificano lo sviluppo di KDE, tra cui l'IDE di KDevelop, l'editor di testo di Kate e il visualizzatore di icone di Cuttlefish.</p>
     <p xml:lang="ka">დააყენებს საჭირო დამოკიდებულებებს KDE-ის აპლიკაციების უმრავლესობის დასაყენებლად (ფრეიმვორკები, აპლიკაციები და Plasma). პაკეტში ასევე შედის ხელსაწყოები, რომლებიც KDE-ის აპლიკაციის შექმნას კიდევ უფრო გაგიადვილებთ (KDevelop IDE, ტექსტური რედაქტორი Kate და ხატულების პროგრამა Cuttlefish).</p>
