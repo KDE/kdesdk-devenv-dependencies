@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KDE Software Development Kit</name>
+  <name xml:lang="ar">حزمة أدوات تطوير برمجيات كيدي</name>
   <name xml:lang="ca">Joc de desenvolupament de programari del KDE</name>
   <name xml:lang="ca-valencia">Joc de desenvolupament de programari de KDE</name>
   <name xml:lang="de">KDE Software Development Kit</name>
@@ -40,6 +41,7 @@
   <name xml:lang="zh-TW">KDE  軟體開發平台</name>
   <icon type="remote">https://cdn.kde.org/screenshots/kdesdk-devenv-dependencies/applications-development.svg</icon>
   <summary>A full SDK for developing Qt and KDE Applications</summary>
+  <summary xml:lang="ar">مجموعة برمجيات متكاملة لتطوير تطبيقات كيو تي و كِيدي</summary>
   <summary xml:lang="ca">Un SDK complet per a desenvolupar aplicacions Qt i KDE</summary>
   <summary xml:lang="ca-valencia">Un SDK complet per a desenvolupar aplicacions Qt i KDE</summary>
   <summary xml:lang="de">Ein vollständiges SDK für die Entwicklung von Qt und KDE-Anwendungen</summary>
@@ -74,6 +76,7 @@
   <summary xml:lang="zh-TW">開發 Qt 和 KDE 應用程式用的完整 SDK</summary>
   <description>
     <p>This is the KDE SDK: everything you need for developing Qt-based KDE software.</p>
+    <p xml:lang="ar">هذه هي مجموعة تطوير البرمجيات كيدي (KDE SDK): كل ما تحتاجه لتطوير برمجيات كيدي المعتمدة على Qt.</p>
     <p xml:lang="ca">Aquest és el SDK del KDE: tot el que cal per a desenvolupar programari KDE basat en les Qt.</p>
     <p xml:lang="ca-valencia">Este és el SDK de KDE: tot el que cal per a desenvolupar programari KDE basat en les Qt.</p>
     <p xml:lang="de">Dies ist das KDE-SDK (Software Development Kit): Alles was Sie zur Entwicklung von KDE-Software auf der Basis der Qt-Bibliotheken benötigen.</p>
@@ -106,6 +109,7 @@
     <p xml:lang="x-test">xxThis is the KDE SDK: everything you need for developing Qt-based KDE software.xx</p>
     <p xml:lang="zh-TW">這是 KDE SDK：您開發基於 Qt 的 KDE 軟體所需要的一切。</p>
     <p>It will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.</p>
+    <p xml:lang="ar">سيثبت التبعيات اللازمة لتجميع معظم برامج كيدي (الأطر، التطبيقات، وبلازما). كما سيوفر تثبيت أدوات تُسهّل تطوير كيدي، بما في ذلك بيئة التطوير المتكاملة KDevelop، ومحرر النصوص كيت Kate، وعارض الأيقونات Cuttlefish.</p>
     <p xml:lang="ca">Instal·larà les dependències requerides per a compilar la majoria del programari KDE (Frameworks, aplicacions i Plasma). També oferirà la instal·lació d'eines que faciliten el desenvolupament del KDE, incloent-hi l'IDE KDevelop, l'editor de text Kate i el visualitzador d'icones Cuttlefish.</p>
     <p xml:lang="ca-valencia">Instal·larà les dependències requerides per a compilar la majoria del programari KDE (Frameworks, aplicacions i Plasma). També oferirà la instal·lació d'eines que faciliten el desenvolupament de KDE, incloent-hi l'IDE KDevelop, l'editor de text Kate i el visor d'icones Cuttlefish.</p>
     <p xml:lang="de">Es installiert alle notwendigen Abhängigkeiten für das Kompilieren von KDE-Software wie Frameworks, Anwendungen and Plasma. Damit können Sie auch Hilfsprogramme wie die integrierte Entwicklungsumgebung KDevelop, den Texteditor Kate und Cuttlefish zur Anzeige von Symbolen installieren.</p>
