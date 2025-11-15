@@ -71,6 +71,7 @@
   <summary xml:lang="sv">En fullständig programvaruutvecklingsmiljö för utveckling av Qt- och KDE-program</summary>
   <summary xml:lang="tr">Qt ve KDE uygulamaları geliştirmek için tam bir Yazılım Geliştirme Takımı</summary>
   <summary xml:lang="uk">Повний набір для розробки програмного забезпечення на основі Qt і програм KDE</summary>
+  <summary xml:lang="zh-CN">用于开发 Qt 和 KDE 应用程序的完整 SDK</summary>
   <summary xml:lang="zh-TW">開發 Qt 和 KDE 應用程式用的完整 SDK</summary>
   <description>
     <p>This is the KDE SDK: everything you need for developing Qt-based KDE software.</p>
@@ -104,6 +105,7 @@
     <p xml:lang="sv">Det här är KDE:s Programvaruutvecklingsmiljö: allt du behöver för att utveckla Qt-baserad KDE-programvara.</p>
     <p xml:lang="tr">Bu, KDE Yazılm Geliştirme Takımıdır: Qt tabanlı KDE yazılımları geliştirmek için gereksinim duyduğunuz her şey.</p>
     <p xml:lang="uk">Це набір бібліотек для розробки програмного забезпечення KDE: усе, що вам знадобиться для розробки програмного забезпечення KDE на основі Qt.</p>
+    <p xml:lang="zh-CN">这是 KDE SDK：开发基于 Qt 的 KDE 软件所需的一切。</p>
     <p xml:lang="zh-TW">這是 KDE SDK：您開發基於 Qt 的 KDE 軟體所需要的一切。</p>
     <p>It will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.</p>
     <p xml:lang="ar">سيثبت التبعيات اللازمة لتجميع معظم برامج كيدي (الأطر، التطبيقات، وبلازما). كما سيوفر تثبيت أدوات تُسهّل تطوير كيدي، بما في ذلك بيئة التطوير المتكاملة KDevelop، ومحرر النصوص كيت Kate، وعارض الأيقونات Cuttlefish.</p>
@@ -136,6 +138,7 @@
     <p xml:lang="sv">Det installerar nödvändiga beroenden för att kompilera det mesta av KDE:s programvara (Ramverk, Program, och Plasma). Det erbjuder också att installera verktyg som gör KDE-utveckling enkel, inklusive den integrerad utvecklingsmiljön KDevelop, texteditorn Kate, och ikonvisningsverktyget Cuttlefish.</p>
     <p xml:lang="tr">Çoğu KDE yazılımını derlemek için gereken bağımlılıkları kurar (Kod Kitaplıkları, Uygulamalar ve Plasma). Ayrıca KDE geliştirmesini kolaylaştıran diğer araçları da kurmayı önerir; örneğin, K Geliştir Tümleşik Geliştirme Ortamı, Kate metin düzenleyicisi ve Mürekkepbalığı simge görüntüleyicisi.</p>
     <p xml:lang="uk">Буде встановлено усі потрібні залежності для збирання більшості програмного забезпечення KDE (бібліотек, програм і Плазми). Також буде запропоновано встановити інструменти, які полегшують розробку KDE, зокрема комплексне середовище для розробки KDevelop, текстовий редактор Kate та програму для перегляду піктограм Cuttlefish.</p>
+    <p xml:lang="zh-CN">它将安装编译大多数 KDE 软件（包括框架、应用程序和 Plasma）所需的依赖项，并提供安装一系列简化 KDE 开发的工具，例如 KDevelop 集成开发环境、Kate 文本编辑器以及 Cuttlefish 图标查看器。</p>
     <p xml:lang="zh-TW">它會安裝編譯大部分 KDE 軟體（Frameworks、應用程式集合以及 Plasma）所需要的相依性。它也會提供選項來安裝 KDE 開發用的工具，包含 KDevelop IDE、Kate 文字編輯器以及 Cuttlefish 圖示檢視器。</p>
   </description>
   <screenshots>
