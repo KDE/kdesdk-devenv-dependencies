@@ -23,6 +23,7 @@
   <name xml:lang="ia">Kit de Developpamento de KDE</name>
   <name xml:lang="id">KDE Software Development Kit</name>
   <name xml:lang="it">Strumenti di sviluppo dei programmi di KDE</name>
+  <name xml:lang="ja">KDE Software Development Kit</name>
   <name xml:lang="ka">KDE-ის ინსტრუმენტები პროგრამული უზრუნველყოფის განვითარებისთვის</name>
   <name xml:lang="ko">KDE 소프트웨어 개발 도구</name>
   <name xml:lang="lt">KDE programavimo komplektas</name>
@@ -61,6 +62,7 @@
   <summary xml:lang="ia">Un complete SDK per developpar Applicationes de Qt e KDE</summary>
   <summary xml:lang="id">Sebuah SDK lengkap untuk mengembangkan Aplikasi Qt dan KDE</summary>
   <summary xml:lang="it">Una SDK completa per sviluppare applicazioni Qt e KDE</summary>
+  <summary xml:lang="ja">Qt と KDE アプリケーション開発用の SDK</summary>
   <summary xml:lang="ka">Qt-ის და KDE-ის ინსტრუმენტები პროგრამული უზრუნველყოფის განვითარებისთვის</summary>
   <summary xml:lang="ko">Qt와 KDE 앱을 개발할 수 있는 완전한 SDK</summary>
   <summary xml:lang="lt">Visas programavimo komplektas, skirtas Qt ir KDE programų plėtojimui</summary>
@@ -98,6 +100,7 @@
     <p xml:lang="ia">Isto es le KDE SDK:  Toto que tu necessita per developpar software de KDE basate sur Qt.</p>
     <p xml:lang="id">Ini adalah KDE SDK: semua yang kamu butuhkan untuk mengembangkan perangkat lunak KDE berbasis Qt.</p>
     <p xml:lang="it">Questa è una SDK di KDE: tutto quello che ti può servire per sviluppare programmi di KDE basati su Qt.</p>
+    <p xml:lang="ja">KDE SDK は、Qt ベースの KDE ソフトウェアの開発に必要なものがすべて揃った SDK です。</p>
     <p xml:lang="ka">ეს KDE SDK-ა. ყველაფერი, რაც შეიძლება Qt-ზე ბაზირებული აპლიკაციების KDE-სთვის შექმნისთვის შეიძლება დაგჭირდეთ.</p>
     <p xml:lang="ko">KDE SDK입니다: Qt 기반 KDE 소프트웨어를 개발할 때 필요한 모든 도구입니다.</p>
     <p xml:lang="lt">Tai yra KDE programavimo komplektas: viskas, ko reikia Qt pagrįstos KDE programinės įrangos plėtojimui.</p>
@@ -134,6 +137,7 @@
     <p xml:lang="ia">Il installara le dependentias requirite per compilar le major parte del software de KDE (Frameworks, Applicationes e Plasma). Ilanque offerera installar instrumentos que face le developpamento de KDE facile, includente le IDE Kdevelop, le editor de texto Kate, e il visor de icone Cuttlefish.</p>
     <p xml:lang="id">Ini akan menginstal dependensi yang diperlukan untuk mengkompilasi sebagian besar perangkat lunak KDE (Frameworks, Applications, dan Plasma). Ia juga akan menawarkan untuk menginstal alat yang membuat pengembangan KDE lebih mudah, termasuk KDevelop IDE, editor teks Kate, dan penampil ikon Cuttlefish.</p>
     <p xml:lang="it">Installerà le dipendenze richieste per la compilazione della maggior parte dei programmi di KDE (Frameworks, Applications e Plasma). Offrirà anche la possibilità di installare strumenti che semplificano lo sviluppo di KDE, tra cui l'IDE di KDevelop, l'editor di testo di Kate e il visualizzatore di icone di Cuttlefish.</p>
+    <p xml:lang="ja">この SDK は KDE ソフトウェアのコンパイルに必要な依存関係 (フレームワークやアプリ、Plasma) をインストールします。さらに、KDE での開発をよりスムーズに行えるよう、KDevelop IDE や Kate テキストエディタ、Cuttlefish アイコンビューアーなどのツールもインストールすることができます。</p>
     <p xml:lang="ka">დააყენებს საჭირო დამოკიდებულებებს KDE-ის აპლიკაციების უმრავლესობის დასაყენებლად (ფრეიმვორკები, აპლიკაციები და Plasma). პაკეტში ასევე შედის ხელსაწყოები, რომლებიც KDE-ის აპლიკაციის შექმნას კიდევ უფრო გაგიადვილებთ (KDevelop IDE, ტექსტური რედაქტორი Kate და ხატულების პროგრამა Cuttlefish).</p>
     <p xml:lang="ko">대부분의 KDE 소프트웨어(프레임워크, 앱, Plasma)를 컴파일할 때 필요한 의존성을 설치합니다. KDE 개발을 쉽게 도와 줄 수 있는 도구인 KDevelop IDE, Kate 텍스트 편집기, Cuttlefish 아이콘 뷰어를 설치합니다.</p>
     <p xml:lang="lt">Tai įdiegs didžiajai KDE programinės įrangos (Frameworks, programoms ir Plasma aplinkai) daliai reikalingas priklausomybes. Tai taip pat pasiūlys įdiegti įrankius, palengvinančius KDE plėtojimą, įskaitant KDevelop integruotą plėtojimo aplinką, Kate tekstų redaktorių ir Cuttlefish piktogramų žiūryklę.</p>
