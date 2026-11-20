@@ -36,6 +36,10 @@
   <name xml:lang="sa">KDE सॉफ्टवेयर विकास किट</name>
   <name xml:lang="sk">KDE sada na vývoj softvéru</name>
   <name xml:lang="sl">KDE Software Development Kit</name>
+  <name xml:lang="sr">КДЕ комплет за развој софтвера</name>
+  <name xml:lang="sr-Latn">KDE komplet za razvoj softvera</name>
+  <name xml:lang="sr-ijekavian">КДЕ комплет за развој софтвера</name>
+  <name xml:lang="sr-ijekavianlatin">KDE komplet za razvoj softvera</name>
   <name xml:lang="sv">KDE Programvaruutvecklingsmiljö</name>
   <name xml:lang="tr">KDE Yazılım Geliştirme Takımı</name>
   <name xml:lang="ug">KDE يۇمشاق دېتال ئىجادىيەت يۈرۈشلۈكى</name>
@@ -75,6 +79,10 @@
   <summary xml:lang="sa">Qt तथा KDE अनुप्रयोगानाम् विकासाय पूर्णः SDK</summary>
   <summary xml:lang="sk">Plné SDK na vývoj Qt a KDE aplikácií</summary>
   <summary xml:lang="sl">Popoln komplet za razvoj programske opreme za aplikacij Qt in KDE</summary>
+  <summary xml:lang="sr">Потпун СДК за развој КуТ и КДЕ програма</summary>
+  <summary xml:lang="sr-Latn">Potpun SDK za razvoj Qt i KDE programa</summary>
+  <summary xml:lang="sr-ijekavian">Потпун СДК за развој КуТ и КДЕ програма</summary>
+  <summary xml:lang="sr-ijekavianlatin">Potpun SDK za razvoj Qt i KDE programa</summary>
   <summary xml:lang="sv">En fullständig programvaruutvecklingsmiljö för utveckling av Qt- och KDE-program</summary>
   <summary xml:lang="tr">Qt ve KDE uygulamaları geliştirmek için tam bir Yazılım Geliştirme Takımı</summary>
   <summary xml:lang="uk">Повний набір для розробки програмного забезпечення на основі Qt і програм KDE</summary>
@@ -113,6 +121,10 @@
     <p xml:lang="sa">इदं KDE SDK अस्ति: Qt-आधारित-KDE-सॉफ्टवेयर-विकासाय भवतः सर्वं आवश्यकम् ।</p>
     <p xml:lang="sk">This is the KDE SDK: everything you need for developing Qt-based KDE software.</p>
     <p xml:lang="sl">To je komplet za razvoj programske opreme KDE; vse kar potrebujete za razvoj aplikacij s Qt za programe KDE</p>
+    <p xml:lang="sr">Ово је КДЕ СДК: све што вам треба за развој КДЕ софтвера заснованог на КуТ‑у.</p>
+    <p xml:lang="sr-Latn">Ovo je KDE SDK: sve što vam treba za razvoj KDE softvera zasnovanog na Qt‑u.</p>
+    <p xml:lang="sr-ijekavian">Ово је КДЕ СДК: све што вам треба за развој КДЕ софтвера заснованог на КуТ‑у.</p>
+    <p xml:lang="sr-ijekavianlatin">Ovo je KDE SDK: sve što vam treba za razvoj KDE softvera zasnovanog na Qt‑u.</p>
     <p xml:lang="sv">Det här är KDE:s Programvaruutvecklingsmiljö: allt du behöver för att utveckla Qt-baserad KDE-programvara.</p>
     <p xml:lang="tr">Bu, KDE Yazılm Geliştirme Takımıdır: Qt tabanlı KDE yazılımları geliştirmek için gereksinim duyduğunuz her şey.</p>
     <p xml:lang="uk">Це набір бібліотек для розробки програмного забезпечення KDE: усе, що вам знадобиться для розробки програмного забезпечення KDE на основі Qt.</p>
@@ -150,6 +162,10 @@
     <p xml:lang="sa">इदं अधिकांशं KDE सॉफ्टवेयर (Frameworks, Applications, and Plasma) संकलनार्थं आवश्यकानि आश्रयाणि संस्थापयिष्यति । एतत् KDE विकासं सुलभं कुर्वन्ति इति साधनानि संस्थापयितुं अपि प्रस्तावयिष्यति, यत्र KDevelop IDE, Kate पाठसम्पादकः, Cuttlefish चिह्नदर्शकः च सन्ति ।</p>
     <p xml:lang="sk">It will install the required dependencies for compiling most KDE software (Frameworks, Applications, and Plasma). It will also offer to install tools that make KDE development easy, including the KDevelop IDE, Kate text editor, and Cuttlefish icon viewer.</p>
     <p xml:lang="sl">Namestil bo vsa potrebna orodja za prevajanje večine programske opreme KDE(Frameworks, Applications, and Plasma)). Ponudil bo tudi namestitev orodij ki olajšajo razvoj KDE, vključno z razvojnim okoljem KDevelop, urejevalnikom besedil Kate in pregledovalnikom ikon Cuttlefish.</p>
+    <p xml:lang="sr">Инсталираће зависности потребне за компиловање већине КДЕ софтвера (радни оквири, програми и Плазма). Понудиће и инсталирање алатки које олакшавају развој за КДЕ, укључујући ИДЕ К‑девелоп, уређивач текста Кејт и приказивач иконица Катлфиш.</p>
+    <p xml:lang="sr-Latn">Instaliraće zavisnosti potrebne za kompilovanje većine KDE softvera (radni okviri, programi i Plasma). Ponudiće i instaliranje alatki koje olakšavaju razvoj za KDE, uključujući IDE KDevelop, uređivač teksta Kate i prikazivač ikonica Cuttlefish.</p>
+    <p xml:lang="sr-ijekavian">Инсталираће зависности потребне за компиловање већине КДЕ софтвера (радни оквири, програми и Плазма). Понудиће и инсталирање алатки које олакшавају развој за КДЕ, укључујући ИДЕ К‑девелоп, уређивач текста Кејт и приказивач иконица Катлфиш.</p>
+    <p xml:lang="sr-ijekavianlatin">Instaliraće zavisnosti potrebne za kompilovanje većine KDE softvera (radni okviri, programi i Plasma). Ponudiće i instaliranje alatki koje olakšavaju razvoj za KDE, uključujući IDE KDevelop, uređivač teksta Kate i prikazivač ikonica Cuttlefish.</p>
     <p xml:lang="sv">Det installerar nödvändiga beroenden för att kompilera det mesta av KDE:s programvara (Ramverk, Program, och Plasma). Det erbjuder också att installera verktyg som gör KDE-utveckling enkel, inklusive den integrerad utvecklingsmiljön KDevelop, texteditorn Kate, och ikonvisningsverktyget Cuttlefish.</p>
     <p xml:lang="tr">Çoğu KDE yazılımını derlemek için gereken bağımlılıkları kurar (Kod Kitaplıkları, Uygulamalar ve Plasma). Ayrıca KDE geliştirmesini kolaylaştıran diğer araçları da kurmayı önerir; örneğin, KDevelop Tümleşik Geliştirme Ortamı, Kate metin düzenleyicisi ve Mürekkepbalığı simge görüntüleyicisi.</p>
     <p xml:lang="uk">Буде встановлено усі потрібні залежності для збирання більшості програмного забезпечення KDE (бібліотек, програм і Плазми). Також буде запропоновано встановити інструменти, які полегшують розробку KDE, зокрема комплексне середовище для розробки KDevelop, текстовий редактор Kate та програму для перегляду піктограм Cuttlefish.</p>
